@@ -19,54 +19,54 @@
       "credit": "Hilton Okinawa Sesoko Resort"
     },
     {
-      "src": "/hotel/rooms/exec-ocean-main.jpg",
-      "alt": "エグゼクティブルーム オーシャンビュー 内観",
-      "label": "客室内観",
+      "src": "/hotel/rooms/exec-ocean-twin-sub1.jpg",
+      "alt": "エグゼクティブルーム ツイン オーシャンビュー",
+      "label": "ツインルーム",
       "credit": "Executive Room Ocean View"
     },
     {
-      "src": "/hotel/rooms/exec-ocean-twin-main.jpg",
-      "alt": "エグゼクティブルーム オーシャンビュー 夕景",
+      "src": "/hotel/rooms/exec-ocean-sub1.jpg",
+      "alt": "エグゼクティブルーム オーシャンビュー（昼間）",
       "label": "オーシャンビュー",
       "credit": "Executive Room Ocean View"
     },
     {
-      "src": "/hotel/rooms/exec-ocean-sub2.jpg",
-      "alt": "エグゼクティブルーム バスルーム",
+      "src": "/hotel/rooms/exec-ocean-opt5.jpg",
+      "alt": "エグゼクティブルーム シャワー",
       "label": "バスルーム",
       "credit": "Executive Room Ocean View"
     }
   ],
   "roomGallery": [
     {
-      "src": "/hotel/rooms/exec-ocean-main.jpg",
-      "alt": "客室全体",
-      "label": "客室"
-    },
-    {
-      "src": "/hotel/rooms/exec-ocean-twin-main.jpg",
-      "alt": "海を望む客室",
-      "label": "海側"
+      "src": "/hotel/rooms/exec-ocean-twin-sub1.jpg",
+      "alt": "ツインベッドの客室",
+      "label": "ツイン"
     },
     {
       "src": "/hotel/rooms/exec-ocean-sub1.jpg",
-      "alt": "客室ディテール",
-      "label": "ディテール"
+      "alt": "海を望む客室（昼間）",
+      "label": "海側"
     },
     {
-      "src": "/hotel/rooms/exec-ocean-sub2.jpg",
-      "alt": "バスルーム",
-      "label": "バス"
+      "src": "/hotel/rooms/exec-ocean-twin-main.jpg",
+      "alt": "客室からのサンセット",
+      "label": "夕景"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-opt3.jpg",
+      "alt": "客室のチェアとテーブル",
+      "label": "チェア"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-opt4.jpg",
+      "alt": "客室のエスプレッソマシーン",
+      "label": "コーヒー"
     },
     {
       "src": "/hotel/rooms/exec-ocean-opt5.jpg",
       "alt": "シャワーブース",
       "label": "シャワー"
-    },
-    {
-      "src": "/hotel/rooms/exec-ocean-thumb.jpg",
-      "alt": "客室サムネイル",
-      "label": "客室"
     }
   ],
   "executiveLounge": {
