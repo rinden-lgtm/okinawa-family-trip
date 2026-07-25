@@ -318,64 +318,81 @@ export function HotelSection() {
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {pools.map((pool, index) => (
               <ScaleIn key={pool.id} delay={index * 0.06}>
-                <Card className="flex h-full flex-col p-6 md:p-8">
-                  <div className="mb-4 flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-hilton-soft text-hilton">
-                      <Waves className="h-5 w-5" strokeWidth={2.2} />
-                    </span>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-wide text-hilton">
-                        Pool
-                      </p>
-                      <h3 className="font-display text-xl font-semibold text-hilton-deep">
-                        {pool.title}
-                      </h3>
+                <Card className="flex h-full flex-col overflow-hidden p-0">
+                  {"images" in pool && pool.images?.length ? (
+                    <div className="relative aspect-[16/10] w-full shrink-0">
+                      <Image
+                        src={pool.images[0].src}
+                        alt={pool.images[0].alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold text-hilton-deep">
+                        {pool.images[0].label}
+                      </span>
                     </div>
-                  </div>
+                  ) : null}
 
-                  <p className="mb-3 inline-flex w-fit rounded-full bg-mint-soft px-3 py-1 text-xs font-extrabold text-mint">
-                    {pool.badge}
-                  </p>
+                  <div className="flex flex-1 flex-col p-6 md:p-8">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-hilton-soft text-hilton">
+                        <Waves className="h-5 w-5" strokeWidth={2.2} />
+                      </span>
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-wide text-hilton">
+                          Pool
+                        </p>
+                        <h3 className="font-display text-xl font-semibold text-hilton-deep">
+                          {pool.title}
+                        </h3>
+                      </div>
+                    </div>
 
-                  <p className="text-sm font-medium leading-relaxed text-muted">
-                    {pool.description}
-                  </p>
+                    <p className="mb-3 inline-flex w-fit rounded-full bg-mint-soft px-3 py-1 text-xs font-extrabold text-mint">
+                      {pool.badge}
+                    </p>
 
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-hilton-soft px-3 py-1 text-xs font-bold text-hilton-deep">
-                      {pool.location}
-                    </span>
-                    <span className="rounded-full bg-sunny-soft px-3 py-1 text-xs font-bold text-[#c27803]">
-                      {pool.hours}
-                    </span>
-                    <span className="rounded-full bg-gold-muted px-3 py-1 text-xs font-bold text-gold">
-                      {pool.period}
-                    </span>
-                  </div>
+                    <p className="text-sm font-medium leading-relaxed text-muted">
+                      {pool.description}
+                    </p>
 
-                  <ul className="mt-5 space-y-2">
-                    {pool.highlights.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-foreground"
-                      >
-                        <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-sunny" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="rounded-full bg-hilton-soft px-3 py-1 text-xs font-bold text-hilton-deep">
+                        {pool.location}
+                      </span>
+                      <span className="rounded-full bg-sunny-soft px-3 py-1 text-xs font-bold text-[#c27803]">
+                        {pool.hours}
+                      </span>
+                      <span className="rounded-full bg-gold-muted px-3 py-1 text-xs font-bold text-gold">
+                        {pool.period}
+                      </span>
+                    </div>
 
-                  <p className="mt-4 text-xs leading-relaxed text-muted">
-                    {pool.note}
-                  </p>
+                    <ul className="mt-5 space-y-2">
+                      {pool.highlights.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2 text-sm text-foreground"
+                        >
+                          <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-sunny" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  <div className="mt-auto pt-5">
-                    <Button asChild variant="outline" size="sm">
-                      <a href={pool.url} target="_blank" rel="noreferrer">
-                        公式案内
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
-                    </Button>
+                    <p className="mt-4 text-xs leading-relaxed text-muted">
+                      {pool.note}
+                    </p>
+
+                    <div className="mt-auto pt-5">
+                      <Button asChild variant="outline" size="sm">
+                        <a href={pool.url} target="_blank" rel="noreferrer">
+                          公式案内
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </Card>
               </ScaleIn>

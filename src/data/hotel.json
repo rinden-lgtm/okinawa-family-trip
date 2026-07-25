@@ -115,7 +115,15 @@
         "ライフジャケットなど無料レンタルあり"
       ],
       "note": "荒天時（雨・強風・雷など）は休業の場合あり。営業時間は時期により変更されます。",
-      "url": "https://sesoko.hiltonjapan.co.jp/facilities/outdoor_pool/"
+      "url": "https://sesoko.hiltonjapan.co.jp/facilities/outdoor_pool/",
+      "images": [
+        {
+          "src": "/hotel/sesoko-outdoor-pool.jpg",
+          "alt": "ヒルトン沖縄瀬底リゾート 屋外プール",
+          "label": "屋外プール",
+          "credit": "Hilton Okinawa Sesoko Resort"
+        }
+      ]
     },
     {
       "id": "indoor",
@@ -131,7 +139,15 @@
         "ライフジャケットなど無料レンタルあり"
       ],
       "note": "16歳未満のお子さまは保護者同伴でご利用ください。",
-      "url": "https://sesoko.hiltonjapan.co.jp/facilities/indoor_pool"
+      "url": "https://sesoko.hiltonjapan.co.jp/facilities/indoor_pool",
+      "images": [
+        {
+          "src": "/hotel/sesoko-indoor-pool.jpg",
+          "alt": "ヒルトン沖縄瀬底リゾート 屋内プール",
+          "label": "屋内プール",
+          "credit": "Hilton Okinawa Sesoko Resort"
+        }
+      ]
     }
   ]
 }
