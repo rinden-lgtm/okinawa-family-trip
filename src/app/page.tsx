@@ -12,8 +12,6 @@ import { SpotsSection } from "@/components/sections/spots";
 import { ContactsSection } from "@/components/sections/contacts";
 import { PageDecor } from "@/components/page-decor";
 
-export const dynamic = "force-dynamic";
-
 export default function HomePage() {
   return (
     <main id="top">
