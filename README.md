@@ -108,7 +108,12 @@ TRIP_SITE_PASSWORD=設定するパスワード
 6. **Deploy** を実行
 7. 発行されたURLで認証画面が表示されることを確認
 
-### 公開後の反映
+### 公開URL（現在）
+
+- 本番: https://okinawa-family-trip-eight.vercel.app
+- GitHub: https://github.com/rinden-lgtm/okinawa-family-trip
+
+### 更新を公開URLへ反映する
 
 ```bash
 git add .
