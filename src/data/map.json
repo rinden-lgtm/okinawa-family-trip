@@ -49,14 +49,6 @@
       "lat": 26.5436,
       "lng": 127.9615,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=道の駅許田"
-    },
-    {
-      "id": "kouri",
-      "name": "古宇利島",
-      "description": "美しい海と橋でつながる島",
-      "lat": 26.7065,
-      "lng": 128.0185,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=古宇利島"
     }
   ]
 }
