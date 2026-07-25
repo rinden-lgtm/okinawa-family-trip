@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Banknote,
   Building2,
   CalendarClock,
   Plane,
@@ -25,12 +24,12 @@ export function PaymentSection() {
         <FadeIn>
           <SectionHeading
             eyebrow="Flight Payment"
-            title="飛行機代のお支払い"
-            description={`${payment.deadline} ／ ${payment.deadlineNote}`}
+            title="飛行機代"
+            description={`${payment.deadline} — ${payment.deadlineNote}`}
           />
         </FadeIn>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-3">
           {[
             {
               icon: Plane,
@@ -45,12 +44,7 @@ export function PaymentSection() {
             {
               icon: User,
               label: "対象人数",
-              value: `${payment.totalParticipants}名様`,
-            },
-            {
-              icon: Banknote,
-              label: "合計（参考）",
-              value: yen(payment.totalAmount),
+              value: `${payment.totalParticipants}名`,
             },
           ].map((item, index) => {
             const Icon = item.icon;
@@ -78,11 +72,11 @@ export function PaymentSection() {
               <div className="flex items-center gap-2 text-hilton-deep">
                 <Building2 className="h-5 w-5 text-hilton" />
                 <h3 className="font-display text-xl font-semibold">
-                  お振込先口座
+                  振込先口座
                 </h3>
               </div>
               <p className="mt-1 text-sm font-bold text-hilton-deep/80">
-                8月末までに各自お振り込みください
+                8月末までに、各自でお振り込みください
               </p>
             </div>
             <div className="grid gap-0 sm:grid-cols-2">
@@ -123,7 +117,7 @@ export function PaymentSection() {
         <FadeIn delay={0.08}>
           <Card className="mt-6 p-6 md:p-8">
             <h3 className="font-display text-xl font-semibold text-hilton-deep">
-              お一人様の内訳
+              内訳（お一人様）
             </h3>
             <ul className="mt-4 space-y-3">
               {payment.breakdown.map((row) => (
@@ -144,7 +138,7 @@ export function PaymentSection() {
         <FadeIn delay={0.12}>
           <Card className="mt-6 p-6 md:p-8">
             <h3 className="mb-3 font-display text-xl font-semibold text-hilton-deep">
-              ご案内
+              備考
             </h3>
             <ul className="space-y-2">
               {payment.notes.map((note) => (
@@ -157,7 +151,7 @@ export function PaymentSection() {
               ))}
             </ul>
             <p className="mt-4 text-xs text-muted">
-              取扱: {payment.agency}（TEL {payment.agencyPhone}）
+              代理店: {payment.agency}（TEL {payment.agencyPhone}）
             </p>
           </Card>
         </FadeIn>
