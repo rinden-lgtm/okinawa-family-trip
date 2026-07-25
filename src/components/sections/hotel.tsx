@@ -10,6 +10,7 @@ import {
   Wine,
   Coffee,
   BedDouble,
+  Waves,
 } from "lucide-react";
 import hotel from "@/data/hotel.json";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,7 @@ import { FadeIn, SlideIn, ScaleIn } from "@/components/motion/reveal";
 export function HotelSection() {
   const lounge = hotel.executiveLounge;
   const roomGallery = "roomGallery" in hotel ? hotel.roomGallery : [];
+  const pools = "pools" in hotel ? hotel.pools : [];
 
   return (
     <section id="hotel" className="section-pad section-block">
@@ -311,6 +313,75 @@ export function HotelSection() {
             </div>
           </Card>
         </FadeIn>
+
+        {pools.length > 0 ? (
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {pools.map((pool, index) => (
+              <ScaleIn key={pool.id} delay={index * 0.06}>
+                <Card className="flex h-full flex-col p-6 md:p-8">
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-hilton-soft text-hilton">
+                      <Waves className="h-5 w-5" strokeWidth={2.2} />
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-wide text-hilton">
+                        Pool
+                      </p>
+                      <h3 className="font-display text-xl font-semibold text-hilton-deep">
+                        {pool.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="mb-3 inline-flex w-fit rounded-full bg-mint-soft px-3 py-1 text-xs font-extrabold text-mint">
+                    {pool.badge}
+                  </p>
+
+                  <p className="text-sm font-medium leading-relaxed text-muted">
+                    {pool.description}
+                  </p>
+
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-hilton-soft px-3 py-1 text-xs font-bold text-hilton-deep">
+                      {pool.location}
+                    </span>
+                    <span className="rounded-full bg-sunny-soft px-3 py-1 text-xs font-bold text-[#c27803]">
+                      {pool.hours}
+                    </span>
+                    <span className="rounded-full bg-gold-muted px-3 py-1 text-xs font-bold text-gold">
+                      {pool.period}
+                    </span>
+                  </div>
+
+                  <ul className="mt-5 space-y-2">
+                    {pool.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-sunny" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="mt-4 text-xs leading-relaxed text-muted">
+                    {pool.note}
+                  </p>
+
+                  <div className="mt-auto pt-5">
+                    <Button asChild variant="outline" size="sm">
+                      <a href={pool.url} target="_blank" rel="noreferrer">
+                        公式案内
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    </Button>
+                  </div>
+                </Card>
+              </ScaleIn>
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );

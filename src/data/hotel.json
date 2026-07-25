@@ -99,5 +99,39 @@
         "label": "デイタイム"
       }
     ]
-  }
+  },
+  "pools": [
+    {
+      "id": "outdoor",
+      "title": "屋外プール",
+      "badge": "夏季限定",
+      "period": "2026年3/20〜11/30",
+      "hours": "11月は 8:30〜17:00",
+      "location": "1階 屋外",
+      "description": "南国のガーデンに臨む屋外プール。小さなお子さま向けの浅いエリアもあります。滞在期間中も営業予定です。",
+      "highlights": [
+        "宿泊者無料",
+        "お子さま用エリアあり（水深45〜60cm）",
+        "ライフジャケットなど無料レンタルあり"
+      ],
+      "note": "荒天時（雨・強風・雷など）は休業の場合あり。営業時間は時期により変更されます。",
+      "url": "https://sesoko.hiltonjapan.co.jp/facilities/outdoor_pool/"
+    },
+    {
+      "id": "indoor",
+      "title": "屋内プール",
+      "badge": "通年営業",
+      "period": "通年",
+      "hours": "6:00〜22:00",
+      "location": "1階",
+      "description": "水温約28℃のジャグジー付き温水プール。天候を気にせず、朝から夜遅くまで利用できます。",
+      "highlights": [
+        "宿泊者無料",
+        "ジャグジー付き温水プール",
+        "ライフジャケットなど無料レンタルあり"
+      ],
+      "note": "16歳未満のお子さまは保護者同伴でご利用ください。",
+      "url": "https://sesoko.hiltonjapan.co.jp/facilities/indoor_pool"
+    }
+  ]
 }
