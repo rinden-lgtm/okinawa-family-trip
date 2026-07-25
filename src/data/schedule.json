@@ -21,8 +21,14 @@
         {
           "time": "11:10着",
           "title": "那覇空港到着",
-          "description": "手荷物受取後、ホテルへ移動",
+          "description": "手荷物受取後、レンタカー出迎えあり。そのままレンタカーでホテルへ移動",
           "icon": "plane-landing"
+        },
+        {
+          "time": "到着後",
+          "title": "レンタカー受取（先行組）",
+          "description": "ワゴンタイプ（8人乗り）3台 ／ ①Room 1・藤井ゆき ②Room 2・Room 3 ③Room 4・Room 5",
+          "icon": "car"
         },
         {
           "time": "午後〜夕方",
@@ -59,8 +65,14 @@
         {
           "time": "11:10着",
           "title": "那覇空港到着・ホテルへ",
-          "description": "手荷物受取後、ホテルへ合流",
+          "description": "手荷物受取後、レンタカー出迎えあり。そのままレンタカーでホテルへ合流",
           "icon": "plane-landing"
+        },
+        {
+          "time": "到着後",
+          "title": "レンタカー受取（後発組）",
+          "description": "ワゴンタイプ2台＋5人乗り1台 ／ ④⑤Room 6・Room 7・Room 9 ⑥Room 8＋藤井ゆき",
+          "icon": "car"
         },
         {
           "time": "16:00",

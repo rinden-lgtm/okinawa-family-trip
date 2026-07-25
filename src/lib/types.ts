@@ -5,7 +5,6 @@ export type TripOverview = {
   days: { date: string; weekday: string }[];
   hotel: string;
   location: string;
-  themes: string[];
 };
 
 export type HotelInfo = {

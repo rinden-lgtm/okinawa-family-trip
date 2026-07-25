@@ -19,6 +19,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import scheduleData from "@/data/schedule.json";
+import rentalCars from "@/data/rental-cars.json";
 import type { ScheduleItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
@@ -41,6 +42,10 @@ const iconMap: Record<string, LucideIcon> = {
   map: Map,
   wine: Wine,
 };
+
+function yen(amount: number) {
+  return `¥${amount.toLocaleString("ja-JP")}`;
+}
 
 function Timeline({ items }: { items: ScheduleItem[] }) {
   const tones = [
@@ -151,6 +156,63 @@ export function ScheduleSection() {
             />
           </Card>
         </SlideIn>
+
+        <FadeIn delay={0.08}>
+          <Card className="mt-6 overflow-hidden p-0">
+            <div className="border-b border-border bg-gradient-to-r from-hilton-soft via-mint-soft to-sunny-soft px-5 py-5 md:px-8">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-hilton shadow-sm">
+                    <Car className="h-5 w-5" strokeWidth={2.2} />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-hilton-deep">
+                      {rentalCars.title}
+                    </h3>
+                    <p className="mt-1 text-sm font-medium leading-relaxed text-hilton-deep/80">
+                      {rentalCars.note}
+                    </p>
+                  </div>
+                </div>
+                <p className="rounded-full bg-white px-4 py-2 text-sm font-extrabold text-hilton-deep shadow-sm">
+                  合計 {yen(rentalCars.total)}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-0 md:grid-cols-2">
+              {rentalCars.periods.map((period) => (
+                <div
+                  key={period.id}
+                  className="border-b border-border px-5 py-5 last:border-b-0 md:border-b-0 md:px-8 md:py-6 md:odd:border-r"
+                >
+                  <p className="text-xs font-extrabold tracking-wide text-gold">
+                    {period.label}
+                  </p>
+                  <p className="mt-1 font-display text-lg font-semibold text-hilton-deep">
+                    {period.summary}
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {period.vehicles.map((vehicle) => (
+                      <li
+                        key={`${period.id}-${vehicle.no}`}
+                        className="rounded-2xl bg-hilton-soft/50 px-4 py-3"
+                      >
+                        <p className="text-sm font-extrabold text-hilton-deep">
+                          <span className="mr-1.5 text-gold">{vehicle.no}</span>
+                          {vehicle.type}
+                        </p>
+                        <p className="mt-1 text-sm font-medium text-muted">
+                          {vehicle.assignment}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </FadeIn>
       </div>
     </section>
   );

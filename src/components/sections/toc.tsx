@@ -27,7 +27,7 @@ const items: {
   {
     href: "#overview",
     label: "旅行概要",
-    description: "日程・宿泊・テーマ",
+    description: "日程・宿泊",
     icon: BookOpen,
     tone: "bg-hilton-soft text-hilton",
   },

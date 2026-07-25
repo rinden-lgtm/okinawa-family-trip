@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ExternalLink, MapPin } from "lucide-react";
 import mapData from "@/data/map.json";
 import { Card } from "@/components/ui/card";
@@ -12,10 +12,27 @@ function embedFor(lat: number, lng: number, zoom = 14) {
   return `https://www.google.com/maps?q=${lat},${lng}&hl=ja&z=${zoom}&output=embed`;
 }
 
+function scrollMapIntoView(el: HTMLElement | null) {
+  if (!el) return;
+  const rect = el.getBoundingClientRect();
+  const headerOffset = 88;
+  const mapHidden =
+    rect.bottom < headerOffset + 100 || rect.top > window.innerHeight * 0.45;
+  if (mapHidden) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 export function MapSection() {
+  const mapRef = useRef<HTMLDivElement>(null);
   const [activeId, setActiveId] = useState(mapData.places[0]?.id ?? "hotel");
   const active =
     mapData.places.find((p) => p.id === activeId) ?? mapData.places[0];
+
+  function selectPlace(id: string) {
+    setActiveId(id);
+    requestAnimationFrame(() => scrollMapIntoView(mapRef.current));
+  }
 
   return (
     <section id="map" className="section-pad section-block">
@@ -29,17 +46,22 @@ export function MapSection() {
         </FadeIn>
 
         <SlideIn>
-          <Card className="overflow-hidden p-0">
-            <iframe
-              key={active.id}
-              title={`${active.name}の地図`}
-              src={embedFor(active.lat, active.lng)}
-              className="h-[320px] w-full border-0 md:h-[420px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </Card>
+          <div
+            ref={mapRef}
+            className="scroll-mt-[calc(4.75rem+env(safe-area-inset-top,0px))] md:scroll-mt-[5.5rem]"
+          >
+            <Card className="overflow-hidden p-0">
+              <iframe
+                key={active.id}
+                title={`${active.name}の地図`}
+                src={embedFor(active.lat, active.lng)}
+                className="h-[320px] w-full border-0 md:h-[420px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </Card>
+          </div>
         </SlideIn>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -51,7 +73,7 @@ export function MapSection() {
                   activeId === place.id &&
                     "border-hilton/40 ring-1 ring-hilton/20"
                 )}
-                onClick={() => setActiveId(place.id)}
+                onClick={() => selectPlace(place.id)}
               >
                 <div className="mb-3 flex items-center justify-between gap-2">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-hilton-soft text-hilton">

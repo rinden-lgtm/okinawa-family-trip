@@ -1,0 +1,48 @@
+{
+  "title": "レンタカー",
+  "note": "空港まで迎えに来ます。そのままレンタカーで移動できます。",
+  "total": 126400,
+  "periods": [
+    {
+      "id": "full-stay",
+      "label": "31日〜3日",
+      "dates": "10/31〜11/3",
+      "summary": "ワゴンタイプ（8人乗り）3台",
+      "vehicles": [
+        {
+          "no": "①",
+          "type": "ワゴンタイプ（8人乗り）",
+          "assignment": "Room 1・藤井ゆき"
+        },
+        {
+          "no": "②",
+          "type": "ワゴンタイプ（8人乗り）",
+          "assignment": "Room 2・Room 3"
+        },
+        {
+          "no": "③",
+          "type": "ワゴンタイプ（8人乗り）",
+          "assignment": "Room 4・Room 5"
+        }
+      ]
+    },
+    {
+      "id": "from-nov1",
+      "label": "1日〜3日",
+      "dates": "11/1〜11/3",
+      "summary": "ワゴンタイプ2台＋5人乗り1台",
+      "vehicles": [
+        {
+          "no": "④⑤",
+          "type": "ワゴンタイプ×2台",
+          "assignment": "Room 6・Room 7・Room 9"
+        },
+        {
+          "no": "⑥",
+          "type": "5人乗り",
+          "assignment": "Room 8＋藤井ゆき"
+        }
+      ]
+    }
+  ]
+}

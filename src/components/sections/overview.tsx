@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, MapPin, Sparkles, Hotel } from "lucide-react";
+import { Calendar, MapPin, Hotel } from "lucide-react";
 import trip from "@/data/trip.json";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
@@ -11,12 +11,6 @@ const dayTones = [
   "bg-gold-muted text-gold",
   "bg-sunny-soft text-[#c27803]",
   "bg-mint-soft text-[#0f9f6e]",
-];
-
-const themeTones = [
-  "bg-hilton text-white",
-  "bg-gold text-white",
-  "bg-mint text-white",
 ];
 
 export function OverviewSection() {
@@ -77,27 +71,6 @@ export function OverviewSection() {
             </Card>
           </SlideIn>
         </div>
-
-        <FadeIn delay={0.12}>
-          <Card className="mt-4 p-6 md:p-8">
-            <div className="mb-5 flex items-center gap-3 text-hilton-deep">
-              <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-sunny-soft">
-                <Sparkles className="h-5 w-5 text-sunny" strokeWidth={2.2} />
-              </span>
-              <h3 className="font-display text-xl font-semibold">テーマ</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {trip.themes.map((theme, i) => (
-                <span
-                  key={theme}
-                  className={`rounded-full px-5 py-2.5 text-sm font-bold shadow-sm ${themeTones[i % themeTones.length]}`}
-                >
-                  {theme}
-                </span>
-              ))}
-            </div>
-          </Card>
-        </FadeIn>
       </div>
     </section>
   );

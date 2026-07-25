@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Baby,
   Car,
@@ -21,7 +21,19 @@ function embedFor(lat: number, lng: number, zoom = 13) {
   return `https://www.google.com/maps?q=${lat},${lng}&hl=ja&z=${zoom}&output=embed`;
 }
 
+function scrollMapIntoView(el: HTMLElement | null) {
+  if (!el) return;
+  const rect = el.getBoundingClientRect();
+  const headerOffset = 88;
+  const mapHidden =
+    rect.bottom < headerOffset + 100 || rect.top > window.innerHeight * 0.45;
+  if (mapHidden) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 export function SpotsSection() {
+  const mapRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState<Filter>("all");
   const filtered =
     filter === "kids"
@@ -42,6 +54,11 @@ export function SpotsSection() {
 
   const active =
     filtered.find((s) => s.id === activeId) ?? filtered[0] ?? spotsData.spots[0];
+
+  function selectSpot(id: string) {
+    setActiveId(id);
+    requestAnimationFrame(() => scrollMapIntoView(mapRef.current));
+  }
 
   return (
     <section id="spots" className="section-pad section-block">
@@ -83,56 +100,61 @@ export function SpotsSection() {
         </FadeIn>
 
         <SlideIn>
-          <Card className="overflow-hidden p-0">
-            <iframe
-              key={active.id}
-              title={`${active.name}の地図`}
-              src={embedFor(active.lat, active.lng)}
-              className="h-[280px] w-full border-0 md:h-[380px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-            <div className="flex flex-col gap-3 border-t border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <p className="font-display text-lg font-semibold text-hilton-deep">
-                    {active.name}
+          <div
+            ref={mapRef}
+            className="scroll-mt-[calc(4.75rem+env(safe-area-inset-top,0px))] md:scroll-mt-[5.5rem]"
+          >
+            <Card className="overflow-hidden p-0">
+              <iframe
+                key={active.id}
+                title={`${active.name}の地図`}
+                src={embedFor(active.lat, active.lng)}
+                className="h-[280px] w-full border-0 md:h-[380px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <div className="flex flex-col gap-3 border-t border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-display text-lg font-semibold text-hilton-deep">
+                      {active.name}
+                    </p>
+                    {active.kids ? (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-gold-muted px-2.5 py-1 text-[10px] font-extrabold text-gold">
+                        <Baby className="h-3 w-3" strokeWidth={2.4} />
+                        小学生・幼児向け
+                      </span>
+                    ) : null}
+                  </div>
+                  <p className="mt-1 flex items-center gap-2 text-sm font-bold text-[#c27803]">
+                    <Clock className="h-4 w-4" strokeWidth={2.2} />
+                    ホテルから {active.driveTime}
                   </p>
-                  {active.kids ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-gold-muted px-2.5 py-1 text-[10px] font-extrabold text-gold">
-                      <Baby className="h-3 w-3" strokeWidth={2.4} />
-                      小学生・幼児向け
-                    </span>
-                  ) : null}
                 </div>
-                <p className="mt-1 flex items-center gap-2 text-sm font-bold text-[#c27803]">
-                  <Clock className="h-4 w-4" strokeWidth={2.2} />
-                  ホテルから {active.driveTime}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Button asChild variant="gold" size="sm">
-                  <a href={active.mapsUrl} target="_blank" rel="noreferrer">
-                    Google Maps
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                </Button>
-                {"officialUrl" in active && active.officialUrl ? (
-                  <Button asChild variant="outline" size="sm">
-                    <a
-                      href={active.officialUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      公式サイト
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild variant="gold" size="sm">
+                    <a href={active.mapsUrl} target="_blank" rel="noreferrer">
+                      Google Maps
                       <ExternalLink className="h-3.5 w-3.5" />
                     </a>
                   </Button>
-                ) : null}
+                  {"officialUrl" in active && active.officialUrl ? (
+                    <Button asChild variant="outline" size="sm">
+                      <a
+                        href={active.officialUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        公式サイト
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    </Button>
+                  ) : null}
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </SlideIn>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -140,7 +162,7 @@ export function SpotsSection() {
             <ScaleIn key={spot.id} delay={index * 0.04}>
               <button
                 type="button"
-                onClick={() => setActiveId(spot.id)}
+                onClick={() => selectSpot(spot.id)}
                 className="h-full w-full text-left"
               >
                 <Card
