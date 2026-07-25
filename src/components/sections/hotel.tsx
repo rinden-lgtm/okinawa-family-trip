@@ -22,7 +22,7 @@ export function HotelSection() {
   const roomGallery = "roomGallery" in hotel ? hotel.roomGallery : [];
 
   return (
-    <section id="hotel" className="section-pad scroll-mt-20 py-20 md:py-28">
+    <section id="hotel" className="section-pad section-block">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <SectionHeading

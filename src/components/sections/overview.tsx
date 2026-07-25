@@ -23,7 +23,7 @@ export function OverviewSection() {
   return (
     <section
       id="overview"
-      className="section-pad scroll-mt-20 py-20 md:py-28"
+      className="section-pad section-block"
     >
       <div className="mx-auto max-w-5xl">
         <FadeIn>

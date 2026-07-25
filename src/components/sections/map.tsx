@@ -18,7 +18,7 @@ export function MapSection() {
     mapData.places.find((p) => p.id === activeId) ?? mapData.places[0];
 
   return (
-    <section id="map" className="section-pad scroll-mt-20 py-20 md:py-28">
+    <section id="map" className="section-pad section-block">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <SectionHeading

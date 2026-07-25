@@ -28,7 +28,7 @@ export function ContactsSection() {
   return (
     <section
       id="contacts"
-      className="section-pad scroll-mt-20 py-20 md:py-28"
+      className="section-pad section-block"
     >
       <div className="mx-auto max-w-5xl">
         <FadeIn>
@@ -59,7 +59,7 @@ export function ContactsSection() {
                   {contact.phone ? (
                     <a
                       href={`tel:${contact.phone.replace(/-/g, "")}`}
-                      className="mt-3 inline-flex items-center gap-2 text-sm text-hilton hover:underline"
+                      className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm text-hilton hover:underline"
                     >
                       <Phone className="h-3.5 w-3.5 text-gold" />
                       {contact.phone}

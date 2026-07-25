@@ -52,6 +52,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -61,10 +63,17 @@ body {
     radial-gradient(circle at 70% 70%, rgba(62, 207, 154, 0.12), transparent 30%),
     radial-gradient(circle at 20% 85%, rgba(123, 140, 255, 0.1), transparent 28%),
     var(--background);
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
   overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 .page-dot-pattern {
@@ -73,6 +82,16 @@ body {
     radial-gradient(circle at 12px 18px, rgba(255, 107, 92, 0.08) 1.2px, transparent 0);
   background-size: 28px 28px, 36px 36px;
   mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 100%);
+}
+
+@media (max-width: 767px) {
+  .page-dot-pattern {
+    opacity: 0.45;
+  }
+
+  .page-decor-icon {
+    display: none !important;
+  }
 }
 
 .section-band {
@@ -128,7 +147,8 @@ body {
 }
 
 .section-pad {
-  padding-inline: 1.25rem;
+  padding-inline: max(1rem, env(safe-area-inset-left));
+  padding-inline-end: max(1rem, env(safe-area-inset-right));
 }
 
 @media (min-width: 768px) {
@@ -140,6 +160,18 @@ body {
 @media (min-width: 1024px) {
   .section-pad {
     padding-inline: 3rem;
+  }
+}
+
+.section-block {
+  scroll-margin-top: calc(4.75rem + env(safe-area-inset-top, 0px));
+  padding-block: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-block {
+    scroll-margin-top: 5.5rem;
+    padding-block: 7rem;
   }
 }
 
@@ -174,12 +206,23 @@ body {
 }
 
 .luxury-card:hover {
-  transform: translateY(-6px) rotate(-0.4deg);
-  box-shadow: var(--shadow-float);
+  transform: none;
+  box-shadow: var(--shadow-soft);
 }
 
 .luxury-card:hover::before {
-  opacity: 0.85;
+  opacity: 0.35;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .luxury-card:hover {
+    transform: translateY(-6px) rotate(-0.4deg);
+    box-shadow: var(--shadow-float);
+  }
+
+  .luxury-card:hover::before {
+    opacity: 0.85;
+  }
 }
 
 .gold-rule {

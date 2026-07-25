@@ -53,35 +53,60 @@ const floatIcons = [
 
 export function HeroSection() {
   const reduce = useReducedMotion();
+  const mobileBubbles = bubbles.slice(0, 6);
 
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+    <section className="relative flex min-h-[100svh] min-h-[100dvh] items-center overflow-hidden">
       <Image
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=85"
-        alt="沖縄の明るいビーチ"
+        alt="?????????"
         fill
         priority
-        className="object-cover object-[center_40%] scale-105"
+        className="object-cover object-[center_35%] scale-105 md:object-[center_40%]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-hilton/35 via-gold/25 to-hilton-deep/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-hilton/40 via-gold/30 to-hilton-deep/75" />
 
       {!reduce ? (
         <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden>
+          {mobileBubbles.map((bubble, index) => (
+            <motion.span
+              key={`bubble-m-${index}`}
+              className="soap-bubble md:hidden"
+              style={{
+                left: bubble.left,
+                bottom: -48,
+                width: Math.max(12, bubble.size - 6),
+                height: Math.max(12, bubble.size - 6),
+                backgroundImage: `radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.35) 18%, rgba(255,255,255,0.08) 42%, ${bubble.tint} 100%)`,
+              }}
+              initial={{ y: 0, opacity: 0, scale: 0.7 }}
+              animate={{
+                y: [0, "-115vh"],
+                x: [0, bubble.drift, 0],
+                opacity: [0, 0.7, 0],
+                scale: [0.75, 1, 0.9],
+              }}
+              transition={{
+                duration: bubble.duration,
+                delay: bubble.delay,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          ))}
           {bubbles.map((bubble, index) => (
             <motion.span
-              key={`bubble-${index}`}
-              className="soap-bubble"
+              key={`bubble-d-${index}`}
+              className="soap-bubble hidden md:block"
               style={{
                 left: bubble.left,
                 bottom: -48,
                 width: bubble.size,
                 height: bubble.size,
-                backgroundImage: `
-                  radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.35) 18%, rgba(255,255,255,0.08) 42%, ${bubble.tint} 100%)
-                `,
+                backgroundImage: `radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.35) 18%, rgba(255,255,255,0.08) 42%, ${bubble.tint} 100%)`,
               }}
-              initial={{ y: 0, x: 0, opacity: 0, scale: 0.7 }}
+              initial={{ y: 0, opacity: 0, scale: 0.7 }}
               animate={{
                 y: [0, "-115vh"],
                 x: [0, bubble.drift, -bubble.drift * 0.5, bubble.drift * 0.3, 0],
@@ -100,7 +125,7 @@ export function HeroSection() {
           {floatIcons.map(({ Icon, className, size, animate, duration }, index) => (
             <motion.span
               key={`icon-${index}`}
-              className={`absolute drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] ${className}`}
+              className={`absolute hidden drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] md:block ${className}`}
               animate={animate}
               transition={{
                 duration,
@@ -120,26 +145,29 @@ export function HeroSection() {
         </div>
       ) : null}
 
-      <div className="relative z-10 w-full section-pad py-28 md:py-32">
+      <div className="relative z-10 w-full section-pad pb-[max(5rem,env(safe-area-inset-bottom))] pt-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center text-white">
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.1 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-white/50 bg-white/25 px-4 py-2 shadow-lg backdrop-blur-md"
+            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border-2 border-white/50 bg-white/25 px-3 py-1.5 shadow-lg backdrop-blur-md md:mb-6 md:px-4 md:py-2"
           >
-            <Sun className="h-4 w-4 text-sunny" />
-            <span className="text-xs font-bold tracking-wide md:text-sm">
+            <Sun className="h-3.5 w-3.5 shrink-0 text-sunny md:h-4 md:w-4" />
+            <span className="truncate text-[11px] font-bold tracking-wide md:text-sm">
               {trip.tagline}
             </span>
-            <Heart className="h-4 w-4 text-gold-light" fill="currentColor" />
+            <Heart
+              className="h-3.5 w-3.5 shrink-0 text-gold-light md:h-4 md:w-4"
+              fill="currentColor"
+            />
           </motion.div>
 
           <motion.h1
             initial={reduce ? false : { opacity: 0, y: 28, rotate: -1 }}
             animate={{ opacity: 1, y: 0, rotate: 0 }}
             transition={{ type: "spring", stiffness: 140, damping: 14, delay: 0.25 }}
-            className="font-display text-[2.5rem] leading-[1.05] font-semibold drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] md:text-6xl lg:text-7xl"
+            className="font-display text-[clamp(1.85rem,8vw,4.5rem)] leading-[1.08] font-semibold text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
           >
             {trip.title}
           </motion.h1>
@@ -148,7 +176,7 @@ export function HeroSection() {
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 160, damping: 16, delay: 0.45 }}
-            className="mt-6 inline-block rounded-full bg-white px-5 py-2.5 text-sm font-extrabold tracking-wide text-hilton-deep shadow-lg md:text-base"
+            className="mt-5 inline-block rounded-full bg-white px-4 py-2 text-xs font-extrabold tracking-wide text-hilton-deep shadow-lg md:mt-6 md:px-5 md:py-2.5 md:text-base"
           >
             {trip.dates}
           </motion.p>
@@ -157,7 +185,7 @@ export function HeroSection() {
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 160, damping: 16, delay: 0.58 }}
-            className="mx-auto mt-6 max-w-md text-sm font-medium leading-relaxed text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] md:text-base"
+            className="mx-auto mt-5 max-w-md px-1 text-sm font-medium leading-relaxed text-pretty text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] md:mt-6 md:text-base"
           >
             {trip.thanks}
           </motion.p>
@@ -166,14 +194,14 @@ export function HeroSection() {
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.75 }}
-            className="mt-12 flex justify-center"
+            className="mt-10 flex justify-center md:mt-12"
           >
             <a
               href="#toc"
-              className="group inline-flex flex-col items-center gap-2 text-white transition hover:scale-105"
-              aria-label="目次へスクロール"
+              className="group inline-flex min-h-11 flex-col items-center gap-2 text-white transition active:scale-95"
+              aria-label="????????"
             >
-              <span className="rounded-full bg-gold px-4 py-2 text-[11px] font-extrabold tracking-wider shadow-[0_8px_20px_rgba(255,107,92,0.45)]">
+              <span className="rounded-full bg-gold px-5 py-2.5 text-[11px] font-extrabold tracking-wider shadow-[0_8px_20px_rgba(255,107,92,0.45)]">
                 LET&apos;S GO!
               </span>
               <ChevronDown className="h-6 w-6 animate-bounce" />

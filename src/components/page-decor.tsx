@@ -125,7 +125,7 @@ export function PageDecor() {
         reduce ? (
           <span
             key={`pi-${index}`}
-            className={`absolute ${color}`}
+            className={`page-decor-icon absolute ${color}`}
             style={{ top, left, right }}
           >
             <Icon style={{ width: size, height: size }} strokeWidth={1.8} />
@@ -133,7 +133,7 @@ export function PageDecor() {
         ) : (
           <motion.span
             key={`pi-${index}`}
-            className={`absolute ${color}`}
+            className={`page-decor-icon absolute ${color}`}
             style={{ top, left, right }}
             animate={{
               y: [0, -14, 0, 10, 0],

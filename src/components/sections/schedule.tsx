@@ -94,7 +94,7 @@ export function ScheduleSection() {
   return (
     <section
       id="schedule"
-      className="section-pad scroll-mt-20 py-20 md:py-28"
+      className="section-pad section-block"
     >
       <div className="mx-auto max-w-5xl">
         <FadeIn>
@@ -106,14 +106,14 @@ export function ScheduleSection() {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <div className="mb-6 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="mb-6 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {days.map((day) => (
               <button
                 key={day.id}
                 type="button"
                 onClick={() => setActiveDay(day.id)}
                 className={cn(
-                  "shrink-0 rounded-2xl border-2 px-4 py-2.5 text-left font-bold transition active:scale-95",
+                  "snap-start shrink-0 rounded-2xl border-2 px-4 py-2.5 text-left font-bold transition active:scale-95",
                   activeDay === day.id
                     ? "border-hilton bg-hilton text-white shadow-[0_8px_24px_rgba(10,160,192,0.35)]"
                     : "border-border bg-white text-hilton-deep hover:border-hilton/40 hover:bg-hilton-soft"

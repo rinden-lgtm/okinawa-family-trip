@@ -44,7 +44,7 @@ export function SpotsSection() {
     filtered.find((s) => s.id === activeId) ?? filtered[0] ?? spotsData.spots[0];
 
   return (
-    <section id="spots" className="section-pad scroll-mt-20 py-20 md:py-28">
+    <section id="spots" className="section-pad section-block">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <SectionHeading

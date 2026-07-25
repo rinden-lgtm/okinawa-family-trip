@@ -16,7 +16,7 @@ import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
 
 export function WeddingSection() {
   return (
-    <section id="wedding" className="section-pad scroll-mt-20 py-20 md:py-28">
+    <section id="wedding" className="section-pad section-block">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <SectionHeading

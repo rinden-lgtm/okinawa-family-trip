@@ -32,7 +32,7 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold text-hilton-deep md:text-4xl lg:text-[2.75rem]">
+      <h2 className="font-display text-[1.75rem] font-semibold text-hilton-deep sm:text-3xl md:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
       <div

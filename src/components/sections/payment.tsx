@@ -20,7 +20,7 @@ export function PaymentSection() {
   const bank = payment.bank;
 
   return (
-    <section id="payment" className="section-pad scroll-mt-20 py-20 md:py-28">
+    <section id="payment" className="section-pad section-block">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <SectionHeading
@@ -74,7 +74,7 @@ export function PaymentSection() {
 
         <SlideIn>
           <Card className="mt-6 overflow-hidden p-0">
-            <div className="border-b border-border bg-gradient-to-r from-hilton-soft via-sunny-soft to-gold-muted px-6 py-4 md:px-8">
+            <div className="border-b border-border bg-gradient-to-r from-hilton-soft via-sunny-soft to-gold-muted px-4 py-4 md:px-8">
               <div className="flex items-center gap-2 text-hilton-deep">
                 <Building2 className="h-5 w-5 text-hilton" />
                 <h3 className="font-display text-xl font-semibold">
@@ -101,12 +101,12 @@ export function PaymentSection() {
               ].map((row) => (
                 <div
                   key={row.label}
-                  className="border-b border-border px-6 py-5 last:border-b-0 sm:odd:border-r sm:[&:nth-last-child(-n+2)]:border-b-0 md:px-8"
+                  className="border-b border-border px-4 py-4 last:border-b-0 sm:odd:border-r sm:[&:nth-last-child(-n+2)]:border-b-0 md:px-8 md:py-5"
                 >
                   <p className="text-xs font-bold tracking-wide text-muted">
                     {row.label}
                   </p>
-                  <p className="mt-1 font-display text-xl font-semibold text-hilton-deep">
+                  <p className="mt-1 break-all font-display text-lg font-semibold text-hilton-deep md:text-xl">
                     {row.value}
                   </p>
                   {"sub" in row && row.sub ? (
@@ -125,7 +125,23 @@ export function PaymentSection() {
             <h3 className="font-display text-xl font-semibold text-hilton-deep">
               内訳（参考）
             </h3>
-            <div className="mt-4 overflow-x-auto">
+            <div className="mt-4 md:hidden">
+              <ul className="space-y-3">
+                {payment.breakdown.map((row) => (
+                  <li
+                    key={row.label}
+                    className="rounded-2xl border border-border bg-hilton-soft/40 px-4 py-3"
+                  >
+                    <p className="font-bold text-hilton-deep">{row.label}</p>
+                    <p className="mt-0.5 text-xs text-muted">{row.detail}</p>
+                    <p className="mt-2 text-sm font-bold text-hilton-deep">
+                      {yen(row.unitPrice)} x {row.count} = {yen(row.amount)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-4 hidden overflow-x-auto md:block">
               <table className="w-full min-w-[520px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-border text-xs font-bold tracking-wide text-muted">

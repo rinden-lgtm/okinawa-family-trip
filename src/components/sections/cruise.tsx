@@ -17,7 +17,7 @@ import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
 
 export function CruiseSection() {
   return (
-    <section id="cruise" className="section-pad scroll-mt-20 py-20 md:py-28">
+    <section id="cruise" className="section-pad section-block">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <SectionHeading
