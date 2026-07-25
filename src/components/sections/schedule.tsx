@@ -107,23 +107,26 @@ export function ScheduleSection() {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <div className="mb-6 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="mb-6 grid grid-cols-4 gap-1.5 sm:gap-2">
             {days.map((day) => (
               <button
                 key={day.id}
                 type="button"
                 onClick={() => setActiveDay(day.id)}
                 className={cn(
-                  "snap-start shrink-0 rounded-2xl border-2 px-4 py-2.5 text-left font-bold transition active:scale-95",
+                  "min-w-0 rounded-2xl border-2 px-1.5 py-2 text-center font-bold transition active:scale-95 sm:px-3 sm:py-2.5 sm:text-left",
                   activeDay === day.id
                     ? "border-hilton bg-hilton text-white shadow-[0_8px_24px_rgba(10,160,192,0.35)]"
                     : "border-border bg-white text-hilton-deep hover:border-hilton/40 hover:bg-hilton-soft"
                 )}
               >
-                <span className="block text-xs tracking-wider opacity-80">
+                <span className="block text-[10px] tracking-wider opacity-80 sm:text-xs">
                   {day.label}
                 </span>
-                <span className="mt-0.5 block text-sm">{day.date}</span>
+                <span className="mt-0.5 block text-xs sm:hidden">
+                  {day.date.replace(/（.+）/, "")}
+                </span>
+                <span className="mt-0.5 hidden text-sm sm:block">{day.date}</span>
               </button>
             ))}
           </div>
