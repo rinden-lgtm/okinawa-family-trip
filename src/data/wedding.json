@@ -1,0 +1,44 @@
+{
+  "title": "挙式・宴会",
+  "date": "2026年11月1日（日）",
+  "venue": "ヒルトン沖縄瀬底リゾート",
+  "ceremony": {
+    "title": "挙式",
+    "time": "16:00",
+    "dressCode": "格好は自由",
+    "description": "ホテル内のガーデンにて挙式を行います。服装は自由です。"
+  },
+  "banquet": {
+    "title": "宴会",
+    "time": "19:00",
+    "note": "予定",
+    "description": "挙式後、ホテル内宴会場にてお祝いの宴会を予定しています。"
+  },
+  "notes": [
+    "挙式は16:00開始です。余裕をもってお集まりください。",
+    "服装は自由です。フォーマルでなくても大丈夫です。",
+    "宴会は19:00予定です。詳細は当日ご案内します。"
+  ],
+  "heroImage": {
+    "src": "/wedding/ceremony-garden.png",
+    "alt": "挙式会場のガーデン",
+    "label": "挙式会場"
+  },
+  "images": [
+    {
+      "src": "/wedding/ceremony-garden.png",
+      "alt": "ヤシの並木に囲まれた挙式ガーデン",
+      "label": "挙式"
+    },
+    {
+      "src": "/wedding/banquet-hall.png",
+      "alt": "ホテルの宴会場",
+      "label": "宴会"
+    },
+    {
+      "src": "/wedding/venue-exterior.png",
+      "alt": "ヒルトン沖縄瀬底リゾート外観",
+      "label": "会場"
+    }
+  ]
+}

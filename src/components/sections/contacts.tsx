@@ -66,7 +66,7 @@ export function ContactsSection() {
                     </a>
                   ) : null}
                   {contact.note ? (
-                    <p className="mt-3 text-xs leading-relaxed text-muted">
+                    <p className="mt-3 whitespace-pre-line text-xs leading-relaxed text-muted">
                       {contact.note}
                     </p>
                   ) : null}

@@ -5,23 +5,39 @@
     {
       "id": "hotel",
       "name": "ホテル",
-      "description": "ザ・ビーチリゾート瀬底 by ヒルトンクラブ",
+      "description": "ヒルトン沖縄瀬底リゾート",
       "lat": 26.6408,
       "lng": 127.8642,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ザ・ビーチリゾート瀬底+by+ヒルトンクラブ"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ヒルトン沖縄瀬底リゾート"
     },
     {
       "id": "naha-airport",
       "name": "那覇空港",
-      "description": "沖縄の玄関口",
+      "description": "沖縄の玄関口（復路チェックインは14:30まで）",
       "lat": 26.1958,
       "lng": 127.6459,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=那覇空港"
     },
     {
+      "id": "centrair",
+      "name": "中部国際空港",
+      "description": "往路・復路の発着空港（セントレア）",
+      "lat": 34.8583,
+      "lng": 136.8053,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=中部国際空港"
+    },
+    {
+      "id": "ginowan-marina",
+      "name": "宜野湾港マリーナ",
+      "description": "11/2 サンセットクルーズ集合（17:30）",
+      "lat": 26.2805,
+      "lng": 127.7295,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=宜野湾港マリーナ"
+    },
+    {
       "id": "port",
-      "name": "港",
-      "description": "本部港（周辺アクセス）",
+      "name": "本部港",
+      "description": "瀬底周辺アクセス",
       "lat": 26.6575,
       "lng": 127.8805,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=本部港"

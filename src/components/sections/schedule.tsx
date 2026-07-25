@@ -21,7 +21,6 @@ import {
 import scheduleData from "@/data/schedule.json";
 import type { ScheduleItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, SlideIn } from "@/components/motion/reveal";
@@ -44,6 +43,14 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 function Timeline({ items }: { items: ScheduleItem[] }) {
+  const tones = [
+    "bg-hilton-soft text-hilton border-hilton/20",
+    "bg-gold-muted text-gold border-gold/20",
+    "bg-sunny-soft text-[#c27803] border-sunny/30",
+    "bg-mint-soft text-mint border-mint/20",
+    "bg-lavender-soft text-lavender border-lavender/20",
+  ];
+
   return (
     <ol className="relative space-y-0">
       {items.map((item, index) => {
@@ -52,20 +59,22 @@ function Timeline({ items }: { items: ScheduleItem[] }) {
         return (
           <li key={`${item.title}-${index}`} className="relative flex gap-4 pb-8 last:pb-0">
             {!isLast ? (
-              <span className="absolute left-[19px] top-10 h-[calc(100%-1.5rem)] w-px bg-gradient-to-b from-gold/60 to-border" />
+              <span className="absolute left-[19px] top-10 h-[calc(100%-1.5rem)] w-[3px] rounded-full bg-gradient-to-b from-hilton via-sunny to-gold" />
             ) : null}
-            <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold-muted text-hilton">
-              <Icon className="h-4 w-4" strokeWidth={1.6} />
+            <span
+              className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border-2 ${tones[index % tones.length]}`}
+            >
+              <Icon className="h-4 w-4" strokeWidth={2.2} />
             </span>
             <div className="min-w-0 flex-1 pt-1">
               {item.time ? (
-                <p className="text-xs tracking-[0.18em] text-gold">{item.time}</p>
+                <p className="text-xs font-bold tracking-wide text-gold">{item.time}</p>
               ) : null}
-              <h4 className="mt-1 font-display text-lg tracking-wide text-hilton">
+              <h4 className="mt-1 font-display text-lg font-semibold text-hilton-deep">
                 {item.title}
               </h4>
               {item.description ? (
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                <p className="mt-1.5 text-sm font-medium leading-relaxed text-muted">
                   {item.description}
                 </p>
               ) : null}
@@ -92,7 +101,7 @@ export function ScheduleSection() {
           <SectionHeading
             eyebrow="Itinerary"
             title="スケジュール"
-            description="日ごとに切り替えて旅程を確認できます"
+            description="Dayをタップして、その日の予定をチェック！"
           />
         </FadeIn>
 
@@ -104,18 +113,16 @@ export function ScheduleSection() {
                 type="button"
                 onClick={() => setActiveDay(day.id)}
                 className={cn(
-                  "shrink-0 rounded-full border px-4 py-2.5 text-left transition",
+                  "shrink-0 rounded-2xl border-2 px-4 py-2.5 text-left font-bold transition active:scale-95",
                   activeDay === day.id
-                    ? "border-hilton bg-hilton text-white shadow-[0_8px_24px_rgba(0,58,112,0.2)]"
-                    : "border-border bg-white text-hilton hover:border-hilton/30 hover:bg-hilton-soft"
+                    ? "border-hilton bg-hilton text-white shadow-[0_8px_24px_rgba(10,160,192,0.35)]"
+                    : "border-border bg-white text-hilton-deep hover:border-hilton/40 hover:bg-hilton-soft"
                 )}
               >
                 <span className="block text-xs tracking-wider opacity-80">
                   {day.label}
                 </span>
-                <span className="mt-0.5 block text-sm font-medium">
-                  {day.date}
-                </span>
+                <span className="mt-0.5 block text-sm">{day.date}</span>
               </button>
             ))}
           </div>
@@ -124,35 +131,24 @@ export function ScheduleSection() {
         <SlideIn key={current.id}>
           <Card className="p-6 md:p-8">
             <div className="mb-8 border-b border-border pb-5">
-              <p className="text-xs uppercase tracking-[0.25em] text-gold">
+              <p className="inline-flex rounded-full bg-gold-muted px-3 py-1 text-xs font-bold uppercase tracking-wide text-gold">
                 {current.label}
               </p>
-              <h3 className="mt-2 font-display text-2xl tracking-wide text-hilton">
+              <h3 className="mt-3 font-display text-2xl font-semibold text-hilton-deep">
                 {current.date}
               </h3>
               {current.subtitle ? (
-                <p className="mt-2 text-sm text-muted">{current.subtitle}</p>
+                <p className="mt-2 text-sm font-medium text-muted">{current.subtitle}</p>
               ) : null}
             </div>
 
-            {"tabs" in current && current.tabs ? (
-              <Tabs defaultValue={current.tabs[0]?.id}>
-                <TabsList className="w-full sm:w-auto">
-                  {current.tabs.map((tab) => (
-                    <TabsTrigger key={tab.id} value={tab.id} className="flex-1 sm:flex-none">
-                      {tab.label}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-                {current.tabs.map((tab) => (
-                  <TabsContent key={tab.id} value={tab.id}>
-                    <Timeline items={tab.items} />
-                  </TabsContent>
-                ))}
-              </Tabs>
-            ) : (
-              <Timeline items={current.items ?? []} />
-            )}
+            <Timeline
+              items={
+                "items" in current && Array.isArray(current.items)
+                  ? current.items
+                  : []
+              }
+            />
           </Card>
         </SlideIn>
       </div>

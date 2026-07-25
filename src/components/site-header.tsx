@@ -6,12 +6,14 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#overview", label: "概要" },
-  { href: "#members", label: "メンバー" },
   { href: "#hotel", label: "ホテル" },
+  { href: "#wedding", label: "挙式" },
+  { href: "#cruise", label: "クルーズ" },
+  { href: "#payment", label: "飛行機代" },
   { href: "#schedule", label: "日程" },
   { href: "#rooms", label: "部屋" },
-  { href: "#packing", label: "持ち物" },
   { href: "#map", label: "MAP" },
+  { href: "#spots", label: "観光" },
   { href: "#contacts", label: "連絡先" },
 ];
 
@@ -31,7 +33,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled || open
-          ? "bg-white/95 shadow-[0_8px_30px_rgba(0,58,112,0.08)] backdrop-blur"
+          ? "bg-white/90 shadow-[0_8px_30px_rgba(10,160,192,0.12)] backdrop-blur-md"
           : "bg-transparent"
       )}
     >
@@ -39,21 +41,23 @@ export function SiteHeader() {
         <a
           href="#top"
           className={cn(
-            "font-display text-sm tracking-[0.18em] transition md:text-base",
-            scrolled || open ? "text-hilton" : "text-white"
+            "font-display text-sm font-semibold transition md:text-base",
+            scrolled || open ? "text-hilton-deep" : "text-white"
           )}
         >
           OKINAWA FAMILY TRIP
         </a>
 
-        <nav className="hidden items-center gap-5 lg:flex">
+        <nav className="hidden items-center gap-2 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className={cn(
-                "text-xs tracking-wide transition hover:opacity-80",
-                scrolled ? "text-muted hover:text-hilton" : "text-white/85"
+                "rounded-full px-3 py-1.5 text-xs font-bold transition",
+                scrolled
+                  ? "text-muted hover:bg-hilton-soft hover:text-hilton"
+                  : "text-white/90 hover:bg-white/20"
               )}
             >
               {link.label}
@@ -64,8 +68,8 @@ export function SiteHeader() {
         <button
           type="button"
           className={cn(
-            "rounded-md p-2 lg:hidden",
-            scrolled || open ? "text-hilton" : "text-white"
+            "rounded-full p-2 lg:hidden",
+            scrolled || open ? "bg-hilton-soft text-hilton" : "bg-white/20 text-white"
           )}
           aria-label={open ? "メニューを閉じる" : "メニューを開く"}
           onClick={() => setOpen((v) => !v)}
@@ -81,7 +85,7 @@ export function SiteHeader() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-3 text-sm text-hilton hover:bg-hilton-soft"
+                className="rounded-2xl bg-hilton-soft/70 px-3 py-3 text-sm font-bold text-hilton-deep hover:bg-hilton-soft"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

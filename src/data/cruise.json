@@ -1,0 +1,29 @@
+{
+  "title": "サンセットクルーズ",
+  "date": "2026年11月2日（月）",
+  "participants": "29名様",
+  "meetingPlace": "宜野湾港マリーナ",
+  "meetingTime": "17:30",
+  "departureTime": "18:00",
+  "returnTime": "20:00",
+  "duration": "約2時間",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=宜野湾港マリーナ",
+  "lat": 26.2805,
+  "lng": 127.7295,
+  "notes": [
+    "ホテルから宜野湾港マリーナまで移動時間がかかります。余裕をもって出発してください。",
+    "夕暮れ〜夜の海上なので、羽織れる服装があると安心です。",
+    "船内トイレあり（トイレットペーパーは流さず備え付けBOXへ）"
+  ],
+  "video": "/cruise/sunset-cruise.mp4",
+  "images": [
+    { "src": "/cruise/cruise-01.png", "alt": "クルーズ船の外観", "label": "船外観" },
+    { "src": "/cruise/cruise-05.png", "alt": "船のアフトデッキ", "label": "デッキ" },
+    { "src": "/cruise/cruise-08.png", "alt": "船のアフトデッキ（別角度）", "label": "デッキ" },
+    { "src": "/cruise/cruise-03.png", "alt": "船内客室・ラウンジ", "label": "船内" },
+    { "src": "/cruise/cruise-04.png", "alt": "上部デッキの座席", "label": "上デッキ" },
+    { "src": "/cruise/cruise-06.png", "alt": "操縦席・上デッキ", "label": "ブリッジ" },
+    { "src": "/cruise/cruise-02.png", "alt": "船内ブリッジ周辺", "label": "船内" },
+    { "src": "/cruise/cruise-07.png", "alt": "船内トイレ", "label": "トイレ" }
+  ]
+}

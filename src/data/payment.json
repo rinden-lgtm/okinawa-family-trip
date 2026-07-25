@@ -1,0 +1,62 @@
+{
+  "title": "飛行機代",
+  "deadline": "2026年8月末まで",
+  "deadlineNote": "各自、下記口座へお振り込みください",
+  "amountPerPerson": 89000,
+  "amountLabel": "お一人様",
+  "currency": "円",
+  "totalAmount": 2403000,
+  "totalParticipants": 27,
+  "estimateNo": "0000529-01-00",
+  "issuedAt": "2026年6月15日",
+  "agency": "JTB総合提携店 株式会社第一観光",
+  "agencyPhone": "059-337-8778",
+  "breakdown": [
+    {
+      "label": "往路（10/31発）",
+      "detail": "中部 → 那覇",
+      "unitPrice": 34000,
+      "count": 15,
+      "amount": 510000
+    },
+    {
+      "label": "往路（11/1発）",
+      "detail": "中部 → 那覇",
+      "unitPrice": 34000,
+      "count": 12,
+      "amount": 408000
+    },
+    {
+      "label": "復路（11/3発）",
+      "detail": "那覇 → 中部",
+      "unitPrice": 54000,
+      "count": 27,
+      "amount": 1458000
+    },
+    {
+      "label": "通信費（発券手続き費用）",
+      "detail": "お一人様",
+      "unitPrice": 1000,
+      "count": 27,
+      "amount": 27000
+    }
+  ],
+  "groups": [
+    { "id": "A", "label": "A: 10/31発", "count": 15, "amount": 89000 },
+    { "id": "B", "label": "B: 11/1発", "count": 12, "amount": 89000 }
+  ],
+  "bank": {
+    "bankName": "百五銀行",
+    "branchName": "四日市西支店",
+    "accountType": "普通",
+    "accountNumber": "801572",
+    "accountHolder": "インデン　シュウヘイ",
+    "accountHolderJa": "位田 周平"
+  },
+  "notes": [
+    "飛行機代はお一人様 ¥89,000 です（往復＋発券手続き費用）。",
+    "8月末までに、各自で下記口座へお振り込みください。",
+    "振込名義はご自身のお名前でお願いいたします。",
+    "内訳書発行日: 2026年6月15日（見積書No. 0000529-01-00）"
+  ]
+}

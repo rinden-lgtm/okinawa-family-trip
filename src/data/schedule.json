@@ -4,35 +4,35 @@
       "id": "day1",
       "label": "Day 1",
       "date": "10/31（土）",
-      "subtitle": "到着・サンセット",
+      "subtitle": "先行組 到着",
       "items": [
         {
-          "time": "午前",
-          "title": "名古屋出発",
-          "description": "集合・チェックイン後、那覇行きフライトへ",
+          "time": "7:30頃",
+          "title": "中部国際空港チェックイン",
+          "description": "7:30頃までにチェックイン手続きをお願いします（先行組 16名／うち0歳1名）",
           "icon": "plane"
         },
         {
-          "time": "午後",
+          "time": "8:40発",
+          "title": "中部国際空港 → 那覇空港",
+          "description": "JTA45／到着 11:10",
+          "icon": "plane"
+        },
+        {
+          "time": "11:10着",
           "title": "那覇空港到着",
-          "description": "手荷物受取後、レンタカーまたは送迎にて移動",
+          "description": "手荷物受取後、ホテルへ移動",
           "icon": "plane-landing"
         },
         {
-          "time": "夕方",
+          "time": "午後〜夕方",
           "title": "ホテルチェックイン",
-          "description": "ザ・ビーチリゾート瀬底 by ヒルトンクラブ",
+          "description": "ヒルトン沖縄瀬底リゾート",
           "icon": "hotel"
         },
         {
-          "time": "夕方〜夜",
-          "title": "サンセットクルージング",
-          "description": "瀬底の海で夕日を楽しむクルーズ",
-          "icon": "sunset"
-        },
-        {
           "time": "夜",
-          "title": "ホテルへ戻る",
+          "title": "ホテルでゆっくり",
           "description": "夕食・休憩、翌日に備えて早めの就寝を",
           "icon": "moon"
         }
@@ -42,24 +42,42 @@
       "id": "day2",
       "label": "Day 2",
       "date": "11/1（日）",
-      "subtitle": "結婚式の日",
+      "subtitle": "後発組 到着・結婚式",
       "items": [
         {
-          "time": "午前〜午後",
-          "title": "結婚式",
-          "description": "挙式・披露宴（詳細は当日案内）",
+          "time": "7:30頃",
+          "title": "中部国際空港チェックイン（後発組）",
+          "description": "7:30頃までにチェックイン手続きをお願いします（後発組 13名／うち1歳1名）",
+          "icon": "plane"
+        },
+        {
+          "time": "8:40発",
+          "title": "中部国際空港 → 那覇空港",
+          "description": "JTA45／到着 11:10",
+          "icon": "plane"
+        },
+        {
+          "time": "11:10着",
+          "title": "那覇空港到着・ホテルへ",
+          "description": "手荷物受取後、ホテルへ合流",
+          "icon": "plane-landing"
+        },
+        {
+          "time": "16:00",
+          "title": "挙式",
+          "description": "格好は自由。ホテル内ガーデンにて",
           "icon": "heart"
         },
         {
-          "time": "夜",
-          "title": "親族ディナー",
-          "description": "家族・親族でのお祝いの食事",
+          "time": "19:00",
+          "title": "宴会",
+          "description": "ホテル内宴会場にて（予定）",
           "icon": "utensils"
         },
         {
           "time": "夜以降",
           "title": "自由時間",
-          "description": "ホテルラウンジやビーチでゆっくり",
+          "description": "ホテルでゆっくり休憩",
           "icon": "sparkles"
         }
       ]
@@ -68,61 +86,37 @@
       "id": "day3",
       "label": "Day 3",
       "date": "11/2（月）",
-      "subtitle": "帰宅組 / 延泊組",
-      "tabs": [
+      "subtitle": "自由行動・サンセットクルーズ",
+      "items": [
         {
-          "id": "return",
-          "label": "帰宅組",
-          "items": [
-            {
-              "time": "午前",
-              "title": "ホテルチェックアウト",
-              "description": "10:00までにフロントへ",
-              "icon": "door-open"
-            },
-            {
-              "time": "午前〜午後",
-              "title": "那覇空港へ移動",
-              "description": "途中、道の駅許田などで休憩可",
-              "icon": "car"
-            },
-            {
-              "time": "午後",
-              "title": "那覇空港出発",
-              "description": "名古屋方面へフライト",
-              "icon": "plane"
-            },
-            {
-              "time": "夕方",
-              "title": "名古屋到着",
-              "description": "解散",
-              "icon": "home"
-            }
-          ]
+          "time": "日中",
+          "title": "自由行動",
+          "description": "各自で自由にお過ごしください",
+          "icon": "sun"
         },
         {
-          "id": "stay",
-          "label": "延泊組",
-          "items": [
-            {
-              "time": "午前",
-              "title": "朝食・自由時間",
-              "description": "ホテルプールやビーチを満喫",
-              "icon": "sun"
-            },
-            {
-              "time": "日中",
-              "title": "沖縄観光",
-              "description": "古宇利島・周辺スポットなど（任意）",
-              "icon": "map"
-            },
-            {
-              "time": "夕方",
-              "title": "ホテルでゆっくり",
-              "description": "延泊最終夜を楽しむ",
-              "icon": "wine"
-            }
-          ]
+          "time": "午後",
+          "title": "宜野湾港マリーナへ移動",
+          "description": "ホテルから移動。17:30集合に間に合うよう余裕をもって出発",
+          "icon": "car"
+        },
+        {
+          "time": "17:30",
+          "title": "宜野湾港マリーナ集合",
+          "description": "サンセットクルーズ集合（29名様）",
+          "icon": "map"
+        },
+        {
+          "time": "18:00〜20:00",
+          "title": "サンセットクルーズ",
+          "description": "18:00出港／20:00帰港。沖縄の夕日を海上から満喫",
+          "icon": "sunset"
+        },
+        {
+          "time": "20:00以降",
+          "title": "ホテルへ戻る",
+          "description": "帰港後、ホテルへ移動・休憩",
+          "icon": "moon"
         }
       ]
     },
@@ -130,7 +124,7 @@
       "id": "day4",
       "label": "Day 4",
       "date": "11/3（火）",
-      "subtitle": "延泊組のみ",
+      "subtitle": "全員 帰路",
       "items": [
         {
           "time": "午前",
@@ -141,18 +135,18 @@
         {
           "time": "午前〜午後",
           "title": "那覇空港へ移動",
-          "description": "瀬底から那覇まで約2時間",
+          "description": "遅くとも14:30までに那覇空港でチェックイン手続き",
           "icon": "car"
         },
         {
-          "time": "午後",
-          "title": "那覇空港出発",
-          "description": "名古屋方面へフライト",
+          "time": "16:00発",
+          "title": "那覇空港 → 中部国際空港",
+          "description": "JTA44／到着 18:00（29名／うち1歳以下2名）",
           "icon": "plane"
         },
         {
-          "time": "夕方",
-          "title": "名古屋到着・解散",
+          "time": "18:00着",
+          "title": "中部国際空港到着・解散",
           "description": "お疲れさまでした",
           "icon": "home"
         }

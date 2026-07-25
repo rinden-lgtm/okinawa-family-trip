@@ -1,19 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --hilton-blue: #003a70;
-  --hilton-blue-deep: #00284d;
-  --hilton-blue-soft: #e8eef5;
-  --gold: #b8965a;
-  --gold-light: #d4bc8a;
-  --gold-muted: #f7f1e6;
-  --background: #fafbfc;
-  --foreground: #1a2332;
-  --muted: #5c6b7a;
+  /* Ocean teal (token name kept for compatibility) */
+  --hilton-blue: #0aa0c0;
+  --hilton-blue-deep: #087a96;
+  --hilton-blue-soft: #e4f7fc;
+  /* Coral accent */
+  --gold: #ff6b5c;
+  --gold-light: #ff8f7a;
+  --gold-muted: #fff0ed;
+  --sunny: #ffc94a;
+  --sunny-soft: #fff6db;
+  --mint: #3ecf9a;
+  --mint-soft: #e5faf2;
+  --lavender: #7b8cff;
+  --lavender-soft: #eef0ff;
+  --background: #f5fbff;
+  --foreground: #1f3340;
+  --muted: #5a7380;
   --card: #ffffff;
-  --border: #e4e9ef;
-  --shadow-soft: 0 12px 40px rgba(0, 58, 112, 0.08);
-  --shadow-float: 0 18px 50px rgba(0, 58, 112, 0.12);
+  --border: #d7ebf2;
+  --shadow-soft: 0 10px 28px rgba(10, 160, 192, 0.12);
+  --shadow-float: 0 16px 40px rgba(255, 107, 92, 0.18);
 }
 
 @theme inline {
@@ -23,6 +31,12 @@
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-muted: var(--gold-muted);
+  --color-sunny: var(--sunny);
+  --color-sunny-soft: var(--sunny-soft);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-lavender: var(--lavender);
+  --color-lavender-soft: var(--lavender-soft);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -41,14 +55,75 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 201, 74, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(255, 107, 92, 0.14), transparent 26%),
+    radial-gradient(circle at 70% 70%, rgba(62, 207, 154, 0.12), transparent 30%),
+    radial-gradient(circle at 20% 85%, rgba(123, 140, 255, 0.1), transparent 28%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-sans), "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans), "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
   overflow-x: hidden;
 }
 
+.page-dot-pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(10, 160, 192, 0.12) 1px, transparent 0),
+    radial-gradient(circle at 12px 18px, rgba(255, 107, 92, 0.08) 1.2px, transparent 0);
+  background-size: 28px 28px, 36px 36px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 100%);
+}
+
+.section-band {
+  position: relative;
+}
+
+.section-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 18%,
+    rgba(228, 247, 252, 0.45) 50%,
+    rgba(255, 255, 255, 0.3) 82%,
+    transparent 100%
+  );
+}
+
+.section-band > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-band-warm::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 246, 219, 0.4) 20%,
+    rgba(255, 240, 237, 0.45) 50%,
+    rgba(255, 246, 219, 0.35) 80%,
+    transparent 100%
+  );
+}
+
+.section-band-mint::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(229, 250, 242, 0.4) 20%,
+    rgba(238, 240, 255, 0.35) 50%,
+    rgba(229, 250, 242, 0.35) 80%,
+    transparent 100%
+  );
+}
+
 ::selection {
-  background: color-mix(in srgb, var(--hilton-blue) 20%, white);
+  background: color-mix(in srgb, var(--hilton-blue) 28%, white);
   color: var(--hilton-blue-deep);
 }
 
@@ -70,28 +145,100 @@ body {
 
 .luxury-card {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 2px solid transparent;
+  background-clip: padding-box;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 1.5rem;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #0aa0c0, #ffc94a, #ff6b5c, #3ecf9a);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.35;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .luxury-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) rotate(-0.4deg);
   box-shadow: var(--shadow-float);
 }
 
+.luxury-card:hover::before {
+  opacity: 0.85;
+}
+
 .gold-rule {
-  width: 48px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  width: 64px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0aa0c0, #ffc94a, #ff6b5c);
 }
 
 .hero-overlay {
   background:
     linear-gradient(
       180deg,
-      rgba(0, 40, 77, 0.35) 0%,
-      rgba(0, 40, 77, 0.25) 40%,
-      rgba(0, 40, 77, 0.55) 100%
+      rgba(8, 122, 150, 0.25) 0%,
+      rgba(255, 107, 92, 0.2) 45%,
+      rgba(8, 90, 120, 0.62) 100%
     );
+}
+
+.pop-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.soap-bubble {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 30% 28%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.35) 18%,
+      rgba(255, 255, 255, 0.08) 42%,
+      rgba(173, 232, 255, 0.18) 70%,
+      rgba(255, 182, 193, 0.16) 100%
+    );
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 0 12px rgba(255, 255, 255, 0.35),
+    0 4px 16px rgba(10, 160, 192, 0.12);
+}
+
+.soap-bubble::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 22%;
+  width: 28%;
+  height: 18%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  transform: rotate(-25deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soap-bubble {
+    animation: none !important;
+  }
 }

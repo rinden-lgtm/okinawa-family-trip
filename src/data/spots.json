@@ -1,0 +1,145 @@
+{
+  "intro": "ホテルからレンタカーで気軽に行ける北部エリアの名所です（所要時間は目安）。小学生・幼児向けの場所も選べます。",
+  "base": "ヒルトン沖縄瀬底リゾート",
+  "spots": [
+    {
+      "id": "churaumi",
+      "name": "沖縄美ら海水族館",
+      "driveTime": "約15分",
+      "distance": "車で近い",
+      "description": "ジンベエザメが見られる沖縄最大級の水族館。幼児は入場無料の年齢あり。",
+      "lat": 26.6942,
+      "lng": 127.8779,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=沖縄美ら海水族館",
+      "officialUrl": "https://churaumi.okinawa/",
+      "kids": true
+    },
+    {
+      "id": "ocean-expo",
+      "name": "海洋博公園",
+      "driveTime": "約15分",
+      "distance": "車で近い",
+      "description": "水族館の隣。熱帯ドリームセンターや遊具・ビーチもあり、幼児連れに便利。",
+      "lat": 26.6915,
+      "lng": 127.877,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=海洋博公園",
+      "officialUrl": "https://oki-park.jp/kaiyo/",
+      "kids": true
+    },
+    {
+      "id": "dino-park",
+      "name": "DINO恐竜PARK",
+      "driveTime": "約25分",
+      "distance": "車で近い",
+      "description": "動く恐竜が約80体。小学生・幼児がワクワクするやんばるの森の恐竜パーク。",
+      "lat": 26.653,
+      "lng": 128.008,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=DINO恐竜PARKやんばる亜熱帯の森",
+      "officialUrl": "https://yanbaru-subtropical-forest.com/",
+      "kids": true
+    },
+    {
+      "id": "pineapple",
+      "name": "ナゴパイナップルパーク",
+      "driveTime": "約30分",
+      "distance": "ドライブ向き",
+      "description": "パイナップル号や試食・お土産。小さな子どもと一緒に楽しめるテーマパーク。",
+      "lat": 26.6255,
+      "lng": 127.9778,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ナゴパイナップルパーク",
+      "officialUrl": "https://www.nagopin.com/",
+      "kids": true
+    },
+    {
+      "id": "fruitland",
+      "name": "OKINAWAフルーツらんど",
+      "driveTime": "約30分",
+      "distance": "ドライブ向き",
+      "description": "フルーツの迷路やスタンプラリー。雨の日でも遊べる全天候型で幼児向け。",
+      "lat": 26.624,
+      "lng": 127.9795,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=OKINAWAフルーツらんど",
+      "officialUrl": "https://www.okinawafruitland.com/",
+      "kids": true
+    },
+    {
+      "id": "neopark",
+      "name": "ネオパークオキナワ",
+      "driveTime": "約35分",
+      "distance": "ドライブ向き",
+      "description": "動物とのふれあいや軽便鉄道。ベビーカーでも回りやすい動物園テーマパーク。",
+      "lat": 26.5915,
+      "lng": 127.9765,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ネオパークオキナワ",
+      "officialUrl": "https://www.neopark.co.jp/",
+      "kids": true
+    },
+    {
+      "id": "sesoko-beach",
+      "name": "瀬底ビーチ",
+      "driveTime": "すぐそば",
+      "distance": "徒歩・車すぐ",
+      "description": "ホテル至近のビーチ。遠浅で家族でのんびりしやすいスポット。",
+      "lat": 26.6395,
+      "lng": 127.8635,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=瀬底ビーチ",
+      "kids": true
+    },
+    {
+      "id": "nakijin",
+      "name": "今帰仁城跡",
+      "driveTime": "約20分",
+      "distance": "車で近い",
+      "description": "世界遺産の城跡。高台からやんばるの景色を一望できます。",
+      "lat": 26.6903,
+      "lng": 127.9275,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=今帰仁城跡",
+      "officialUrl": "https://nakijinson.jp/nakijincastle/",
+      "kids": false
+    },
+    {
+      "id": "bise",
+      "name": "備瀬のフクギ並木",
+      "driveTime": "約20分",
+      "distance": "車で近い",
+      "description": "フクギのトンネルが続く並木道。散策や写真スポットに最適です。",
+      "lat": 26.7028,
+      "lng": 127.8789,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=備瀬のフクギ並木",
+      "kids": false
+    },
+    {
+      "id": "kouri",
+      "name": "古宇利島",
+      "driveTime": "約30分",
+      "distance": "ドライブ向き",
+      "description": "古宇利大橋を渡って到着。透明度の高い海とビーチが魅力です。",
+      "lat": 26.7065,
+      "lng": 128.0185,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=古宇利島",
+      "kids": false
+    },
+    {
+      "id": "manzamo",
+      "name": "万座毛",
+      "driveTime": "約50分",
+      "distance": "半日観光向き",
+      "description": "断崖から広がるエメラルドグリーンの海。沖縄を代表する絶景スポット。",
+      "lat": 26.5044,
+      "lng": 127.8519,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=万座毛",
+      "kids": false
+    },
+    {
+      "id": "zanpa",
+      "name": "残波岬",
+      "driveTime": "約55分",
+      "distance": "半日観光向き",
+      "description": "灯台のある岬。太平洋を望むドライブコースとしても人気です。",
+      "lat": 26.4408,
+      "lng": 127.7153,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=残波岬灯台",
+      "kids": false
+    }
+  ]
+}

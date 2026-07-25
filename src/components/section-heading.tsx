@@ -27,11 +27,12 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-gold">
+        <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-gold-muted px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-gold">
+          <span className="h-2 w-2 rounded-full bg-sunny" />
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl tracking-[0.04em] text-hilton md:text-4xl lg:text-[2.75rem]">
+      <h2 className="font-display text-3xl font-semibold text-hilton-deep md:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
       <div
@@ -41,7 +42,7 @@ export function SectionHeading({
         )}
       />
       {description ? (
-        <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted md:text-base">
+        <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-muted md:text-base">
           {description}
         </p>
       ) : null}

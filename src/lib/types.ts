@@ -8,17 +8,6 @@ export type TripOverview = {
   themes: string[];
 };
 
-export type Member = {
-  name: string;
-  note?: string;
-};
-
-export type MemberGroup = {
-  id: string;
-  name: string;
-  members: Member[];
-};
-
 export type HotelInfo = {
   name: string;
   nameEn: string;
@@ -28,7 +17,16 @@ export type HotelInfo = {
   checkOut: string;
   website: string;
   mapEmbedUrl: string;
-  images: { src: string; alt: string; label: string }[];
+  images: { src: string; alt: string; label: string; credit?: string }[];
+  executiveLounge?: {
+    title: string;
+    floor: string;
+    hours: string;
+    description: string;
+    highlights: string[];
+    note?: string;
+    images: { src: string; alt: string; label: string }[];
+  };
 };
 
 export type ScheduleItem = {
@@ -59,13 +57,6 @@ export type Room = {
   adults: number;
   children?: number;
   note?: string;
-};
-
-export type PackingItem = {
-  id: string;
-  label: string;
-  note?: string;
-  category: string;
 };
 
 export type MapPlace = {

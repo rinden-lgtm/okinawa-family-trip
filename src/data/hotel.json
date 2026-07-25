@@ -1,32 +1,103 @@
 {
-  "name": "ザ・ビーチリゾート瀬底 by ヒルトンクラブ",
-  "nameEn": "The Beach Resort Sesoko by Hilton Club",
+  "name": "ヒルトン沖縄瀬底リゾート",
+  "nameEn": "Hilton Okinawa Sesoko Resort",
   "phone": "0980-47-6300",
-  "address": "沖縄県国頭郡本部町瀬底1081-4",
-  "checkIn": "16:00",
-  "checkOut": "10:00",
-  "website": "https://www.hgvc.co.jp/japan/the-beach-resort-sesoko-by-hilton-club/",
-  "mapEmbedUrl": "https://www.google.com/maps?q=26.6408,127.8642&hl=ja&z=15&output=embed",
+  "address": "沖縄県国頭郡本部町瀬底5750",
+  "checkIn": "15:00",
+  "checkOut": "11:00",
+  "website": "https://sesoko.hiltonjapan.co.jp/",
+  "mapEmbedUrl": "https://www.google.com/maps?q=ヒルトン沖縄瀬底リゾート&hl=ja&z=15&output=embed",
+  "roomType": "エグゼクティブルーム オーシャンビュー",
+  "roomTypeEn": "Executive Room Ocean View",
+  "roomTypeUrl": "https://sesoko.hiltonjapan.co.jp/rooms/king_executive_room_ocean_view",
+  "roomDescription": "最上階9階の特別フロア。全室オーシャンビューで、エグゼクティブラウンジの朝食・カクテルも利用できます。客室にはエスプレッソマシーン、バスローブ、パジャマもご用意。",
   "images": [
     {
-      "src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
-      "alt": "リゾートホテル外観",
-      "label": "外観"
+      "src": "/hotel/sesoko-exterior-clear.jpg",
+      "alt": "ヒルトン沖縄瀬底リゾート 外観",
+      "label": "外観",
+      "credit": "Hilton Okinawa Sesoko Resort"
     },
     {
-      "src": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&q=80",
-      "alt": "ホテルプール",
-      "label": "プール"
+      "src": "/hotel/rooms/exec-ocean-main.jpg",
+      "alt": "エグゼクティブルーム オーシャンビュー 内観",
+      "label": "客室内観",
+      "credit": "Executive Room Ocean View"
     },
     {
-      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
-      "alt": "沖縄のビーチ",
-      "label": "ビーチ"
+      "src": "/hotel/rooms/exec-ocean-twin-main.jpg",
+      "alt": "エグゼクティブルーム オーシャンビュー 夕景",
+      "label": "オーシャンビュー",
+      "credit": "Executive Room Ocean View"
     },
     {
-      "src": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=80",
-      "alt": "ホテル客室",
+      "src": "/hotel/rooms/exec-ocean-sub2.jpg",
+      "alt": "エグゼクティブルーム バスルーム",
+      "label": "バスルーム",
+      "credit": "Executive Room Ocean View"
+    }
+  ],
+  "roomGallery": [
+    {
+      "src": "/hotel/rooms/exec-ocean-main.jpg",
+      "alt": "客室全体",
+      "label": "客室"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-twin-main.jpg",
+      "alt": "海を望む客室",
+      "label": "海側"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-sub1.jpg",
+      "alt": "客室ディテール",
+      "label": "ディテール"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-sub2.jpg",
+      "alt": "バスルーム",
+      "label": "バス"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-opt5.jpg",
+      "alt": "シャワーブース",
+      "label": "シャワー"
+    },
+    {
+      "src": "/hotel/rooms/exec-ocean-thumb.jpg",
+      "alt": "客室サムネイル",
       "label": "客室"
     }
-  ]
+  ],
+  "executiveLounge": {
+    "title": "エグゼクティブラウンジ",
+    "floor": "9F",
+    "hours": "6:30〜20:00",
+    "badge": "朝食が食べられる！",
+    "breakfast": {
+      "title": "ラウンジで朝ごはん",
+      "hours": "平日 6:30〜10:00 / 土日祝 6:30〜10:30",
+      "description": "エグゼクティブルーム・スイートご宿泊の方は、最上階ラウンジで朝食を無料で楽しめます。海を眺めながらの朝ごはんがおすすめです。"
+    },
+    "description": "最上階9階の専用ラウンジ。いちばんのポイントは、朝ごはんがラウンジで食べられること。瀬底の海と空を望むパノラマビューのもと、朝食のほかスナックやイブニングカクテルも楽しめます。",
+    "highlights": [
+      "★ 朝食サービスあり（平日 6:30〜10:00 / 土日祝 6:30〜10:30）",
+      "スナックタイム 11:00〜17:00",
+      "カクテルタイム 17:00〜19:00",
+      "Wi-Fi・新聞・雑誌あり"
+    ],
+    "note": "混雑時は1時間の利用制限あり。お食事・お飲み物の持ち出し／持ち込みは不可。",
+    "images": [
+      {
+        "src": "/hotel/sesoko-lounge-main.jpg",
+        "alt": "エグゼクティブラウンジ（サンセット）",
+        "label": "サンセット"
+      },
+      {
+        "src": "/hotel/sesoko-lounge-2.jpg",
+        "alt": "エグゼクティブラウンジ（デイタイム）",
+        "label": "デイタイム"
+      }
+    ]
+  }
 }

@@ -1,27 +1,31 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
+import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = Fredoka({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const sans = Outfit({
+const sans = Nunito({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   title: "OKINAWA FAMILY TRIP | 沖縄旅行のしおり",
-  description:
-    "2026.10.31 - 2026.11.03 Family Wedding & Vacation — ザ・ビーチリゾート瀬底 by ヒルトンクラブ",
+  description: "家族・親族専用の沖縄旅行しおりです。",
+  robots: {
+    index: false,
+    follow: false,
+    noarchive: true,
+    nosnippet: true,
+  },
   openGraph: {
     title: "OKINAWA FAMILY TRIP",
-    description: "家族・親族のための沖縄旅行ガイド",
+    description: "家族・親族専用の沖縄旅行しおりです。",
     locale: "ja_JP",
     type: "website",
   },
@@ -35,7 +39,6 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${display.variable} ${sans.variable} h-full`}>
       <body className="min-h-full bg-background font-sans text-foreground antialiased">
-        <SiteHeader />
         {children}
       </body>
     </html>
