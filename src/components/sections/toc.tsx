@@ -26,71 +26,71 @@ const items: {
 }[] = [
   {
     href: "#overview",
-    label: "????",
-    description: "?????????",
+    label: "旅行概要",
+    description: "日程・宿泊・テーマ",
     icon: BookOpen,
     tone: "bg-hilton-soft text-hilton",
   },
   {
     href: "#hotel",
-    label: "???",
-    description: "????????",
+    label: "ホテル",
+    description: "瀬底リゾート案内",
     icon: Building2,
     tone: "bg-mint-soft text-mint",
   },
   {
     href: "#wedding",
-    label: "?????",
-    description: "11/1 ???",
+    label: "挙式・宴会",
+    description: "11/1 結婚式",
     icon: Heart,
     tone: "bg-sunny-soft text-[#d97706]",
   },
   {
     href: "#cruise",
-    label: "????",
-    description: "11/2 ?????",
+    label: "クルーズ",
+    description: "11/2 サンセット",
     icon: Ship,
     tone: "bg-lavender-soft text-lavender",
   },
   {
     href: "#payment",
-    label: "????",
-    description: "??????",
+    label: "飛行機代",
+    description: "振込先・期限",
     icon: Banknote,
     tone: "bg-mint-soft text-mint",
   },
   {
     href: "#schedule",
-    label: "??????",
-    description: "??????",
+    label: "スケジュール",
+    description: "日ごとの旅程",
     icon: CalendarDays,
     tone: "bg-hilton-soft text-hilton-deep",
   },
   {
     href: "#rooms",
-    label: "????",
-    description: "????????",
+    label: "部屋割り",
+    description: "各ルームの宿泊者",
     icon: BedDouble,
     tone: "bg-gold-muted text-gold",
   },
   {
     href: "#map",
     label: "MAP",
-    description: "??????",
+    description: "主要スポット",
     icon: MapPinned,
     tone: "bg-lavender-soft text-lavender",
   },
   {
     href: "#spots",
-    label: "????",
-    description: "???????",
+    label: "観光名所",
+    description: "車で行ける周辺",
     icon: Car,
     tone: "bg-mint-soft text-mint",
   },
   {
     href: "#contacts",
-    label: "?????",
-    description: "?????????",
+    label: "緊急連絡先",
+    description: "ホテル・代表者など",
     icon: Phone,
     tone: "bg-sunny-soft text-[#d97706]",
   },
@@ -103,8 +103,8 @@ export function TocSection() {
         <FadeIn>
           <SectionHeading
             eyebrow="Contents"
-            title="??"
-            description="????????????????"
+            title="目次"
+            description="好きなところからチェックしよう！"
           />
         </FadeIn>
 

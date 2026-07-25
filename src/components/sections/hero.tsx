@@ -59,7 +59,7 @@ export function HeroSection() {
     <section className="relative flex min-h-[100svh] min-h-[100dvh] items-center overflow-hidden">
       <Image
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=85"
-        alt="?????????"
+        alt="沖縄の明るいビーチ"
         fill
         priority
         className="object-cover object-[center_35%] scale-105 md:object-[center_40%]"
@@ -199,7 +199,7 @@ export function HeroSection() {
             <a
               href="#toc"
               className="group inline-flex min-h-11 flex-col items-center gap-2 text-white transition active:scale-95"
-              aria-label="????????"
+              aria-label="目次へスクロール"
             >
               <span className="rounded-full bg-gold px-5 py-2.5 text-[11px] font-extrabold tracking-wider shadow-[0_8px_20px_rgba(255,107,92,0.45)]">
                 LET&apos;S GO!

@@ -135,7 +135,7 @@ export function PaymentSection() {
                     <p className="font-bold text-hilton-deep">{row.label}</p>
                     <p className="mt-0.5 text-xs text-muted">{row.detail}</p>
                     <p className="mt-2 text-sm font-bold text-hilton-deep">
-                      {yen(row.unitPrice)} x {row.count} = {yen(row.amount)}
+                      {yen(row.unitPrice)} × {row.count} = {yen(row.amount)}
                     </p>
                   </li>
                 ))}
