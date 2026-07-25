@@ -27,7 +27,7 @@
         {
           "time": "到着後",
           "title": "レンタカー受取（先行組）",
-          "description": "ワゴンタイプ（8人乗り）3台 ／ ①Room 1・藤井ゆき ②Room 2・Room 3 ③Room 4・Room 5",
+          "description": "ワゴンタイプ（8人乗り）3台 ／ 詳細は下のレンタカー欄",
           "icon": "car"
         },
         {
@@ -71,7 +71,7 @@
         {
           "time": "到着後",
           "title": "レンタカー受取（後発組）",
-          "description": "ワゴンタイプ2台＋5人乗り1台 ／ ④⑤Room 6・Room 7・Room 9 ⑥Room 8＋藤井ゆき",
+          "description": "ワゴンタイプ2台＋5人乗り1台 ／ 詳細は下のレンタカー欄",
           "icon": "car"
         },
         {

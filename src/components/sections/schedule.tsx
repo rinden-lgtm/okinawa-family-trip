@@ -43,10 +43,6 @@ const iconMap: Record<string, LucideIcon> = {
   wine: Wine,
 };
 
-function yen(amount: number) {
-  return `¥${amount.toLocaleString("ja-JP")}`;
-}
-
 function Timeline({ items }: { items: ScheduleItem[] }) {
   const tones = [
     "bg-hilton-soft text-hilton border-hilton/20",
@@ -160,23 +156,18 @@ export function ScheduleSection() {
         <FadeIn delay={0.08}>
           <Card className="mt-6 overflow-hidden p-0">
             <div className="border-b border-border bg-gradient-to-r from-hilton-soft via-mint-soft to-sunny-soft px-5 py-5 md:px-8">
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-hilton shadow-sm">
-                    <Car className="h-5 w-5" strokeWidth={2.2} />
-                  </span>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold text-hilton-deep">
-                      {rentalCars.title}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium leading-relaxed text-hilton-deep/80">
-                      {rentalCars.note}
-                    </p>
-                  </div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-hilton shadow-sm">
+                  <Car className="h-5 w-5" strokeWidth={2.2} />
+                </span>
+                <div>
+                  <h3 className="font-display text-xl font-semibold text-hilton-deep">
+                    {rentalCars.title}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium leading-relaxed text-hilton-deep/80">
+                    {rentalCars.note}
+                  </p>
                 </div>
-                <p className="rounded-full bg-white px-4 py-2 text-sm font-extrabold text-hilton-deep shadow-sm">
-                  合計 {yen(rentalCars.total)}
-                </p>
               </div>
             </div>
 

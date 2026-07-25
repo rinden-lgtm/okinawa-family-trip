@@ -1,7 +1,6 @@
 {
   "title": "レンタカー",
   "note": "空港まで迎えに来ます。そのままレンタカーで移動できます。",
-  "total": 126400,
   "periods": [
     {
       "id": "full-stay",
@@ -12,17 +11,17 @@
         {
           "no": "①",
           "type": "ワゴンタイプ（8人乗り）",
-          "assignment": "Room 1・藤井ゆき"
+          "assignment": "位田亮太・咲希、りく、はるく、あおく"
         },
         {
           "no": "②",
           "type": "ワゴンタイプ（8人乗り）",
-          "assignment": "Room 2・Room 3"
+          "assignment": "位田武司・圭子 ／ 位田周平・一葉、そうし、かなた"
         },
         {
           "no": "③",
           "type": "ワゴンタイプ（8人乗り）",
-          "assignment": "Room 4・Room 5"
+          "assignment": "市川諭・直美・貴久 ／ 山川有紀、ゆう"
         }
       ]
     },
@@ -35,12 +34,12 @@
         {
           "no": "④⑤",
           "type": "ワゴンタイプ×2台",
-          "assignment": "Room 6・Room 7・Room 9"
+          "assignment": "明石正夫・省吾・佑介・智也 ／ 明石太一、るか ／ 明石なつ・奈央、やまと、だいご"
         },
         {
           "no": "⑥",
           "type": "5人乗り",
-          "assignment": "Room 8＋藤井ゆき"
+          "assignment": "藤井洋介・彼女＋藤井ゆき"
         }
       ]
     }
