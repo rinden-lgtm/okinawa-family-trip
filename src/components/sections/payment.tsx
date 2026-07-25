@@ -13,7 +13,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
 
 function yen(amount: number) {
-  return `¥${amount.toLocaleString("ja-JP")}`;
+  return `�${amount.toLocaleString("ja-JP")}`;
 }
 
 export function PaymentSection() {
@@ -25,8 +25,8 @@ export function PaymentSection() {
         <FadeIn>
           <SectionHeading
             eyebrow="Flight Payment"
-            title="飛行機代のお支払い"
-            description={`${payment.deadline} ／ ${payment.deadlineNote}`}
+            title="?????????"
+            description={`${payment.deadline} ? ${payment.deadlineNote}`}
           />
         </FadeIn>
 
@@ -34,22 +34,22 @@ export function PaymentSection() {
           {[
             {
               icon: Plane,
-              label: "お一人様",
+              label: "????",
               value: yen(payment.amountPerPerson),
             },
             {
               icon: CalendarClock,
-              label: "振込期限",
-              value: "8月末まで",
+              label: "????",
+              value: "8????",
             },
             {
               icon: User,
-              label: "対象人数",
-              value: `${payment.totalParticipants}名様`,
+              label: "????",
+              value: `${payment.totalParticipants}??`,
             },
             {
               icon: Banknote,
-              label: "合計（参考）",
+              label: "??????",
               value: yen(payment.totalAmount),
             },
           ].map((item, index) => {
@@ -78,23 +78,23 @@ export function PaymentSection() {
               <div className="flex items-center gap-2 text-hilton-deep">
                 <Building2 className="h-5 w-5 text-hilton" />
                 <h3 className="font-display text-xl font-semibold">
-                  お振込先口座
+                  ??????
                 </h3>
               </div>
               <p className="mt-1 text-sm font-bold text-hilton-deep/80">
-                8月末までに各自お振り込みください
+                8????????????????
               </p>
             </div>
             <div className="grid gap-0 sm:grid-cols-2">
               {[
-                { label: "銀行名", value: bank.bankName },
-                { label: "支店名", value: bank.branchName },
+                { label: "???", value: bank.bankName },
+                { label: "???", value: bank.branchName },
                 {
-                  label: "口座種別・番号",
+                  label: "???????",
                   value: `${bank.accountType} ${bank.accountNumber}`,
                 },
                 {
-                  label: "口座名義",
+                  label: "????",
                   value: bank.accountHolder,
                   sub: bank.accountHolderJa,
                 },
@@ -123,72 +123,28 @@ export function PaymentSection() {
         <FadeIn delay={0.08}>
           <Card className="mt-6 p-6 md:p-8">
             <h3 className="font-display text-xl font-semibold text-hilton-deep">
-              内訳（参考）
+              ???????
             </h3>
-            <div className="mt-4 md:hidden">
-              <ul className="space-y-3">
-                {payment.breakdown.map((row) => (
-                  <li
-                    key={row.label}
-                    className="rounded-2xl border border-border bg-hilton-soft/40 px-4 py-3"
-                  >
-                    <p className="font-bold text-hilton-deep">{row.label}</p>
-                    <p className="mt-0.5 text-xs text-muted">{row.detail}</p>
-                    <p className="mt-2 text-sm font-bold text-hilton-deep">
-                      {yen(row.unitPrice)} × {row.count} = {yen(row.amount)}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-4 hidden overflow-x-auto md:block">
-              <table className="w-full min-w-[520px] text-left text-sm">
-                <thead>
-                  <tr className="border-b border-border text-xs font-bold tracking-wide text-muted">
-                    <th className="pb-3 pr-3 font-bold">項目</th>
-                    <th className="pb-3 pr-3 font-bold">単価</th>
-                    <th className="pb-3 pr-3 font-bold">人数</th>
-                    <th className="pb-3 font-bold">金額</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {payment.breakdown.map((row) => (
-                    <tr key={row.label} className="border-b border-border/70">
-                      <td className="py-3 pr-3 font-medium text-foreground">
-                        <span className="block">{row.label}</span>
-                        <span className="text-xs text-muted">{row.detail}</span>
-                      </td>
-                      <td className="py-3 pr-3 font-medium text-hilton-deep">
-                        {yen(row.unitPrice)}
-                      </td>
-                      <td className="py-3 pr-3 font-medium text-hilton-deep">
-                        {row.count}
-                      </td>
-                      <td className="py-3 font-bold text-hilton-deep">
-                        {yen(row.amount)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {payment.groups.map((group) => (
-                <span
-                  key={group.id}
-                  className="rounded-full bg-hilton-soft px-4 py-2 text-xs font-bold text-hilton-deep"
+            <ul className="mt-4 space-y-3">
+              {payment.breakdown.map((row) => (
+                <li
+                  key={row.label}
+                  className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-hilton-soft/40 px-4 py-3"
                 >
-                  {group.label} {group.count}名 / {yen(group.amount)}
-                </span>
+                  <p className="font-bold text-hilton-deep">{row.label}</p>
+                  <p className="shrink-0 font-display text-lg font-semibold text-hilton-deep">
+                    {yen(row.unitPrice)}
+                  </p>
+                </li>
               ))}
-            </div>
+            </ul>
           </Card>
         </FadeIn>
 
         <FadeIn delay={0.12}>
           <Card className="mt-6 p-6 md:p-8">
             <h3 className="mb-3 font-display text-xl font-semibold text-hilton-deep">
-              ご案内
+              ???
             </h3>
             <ul className="space-y-2">
               {payment.notes.map((note) => (
@@ -196,12 +152,12 @@ export function PaymentSection() {
                   key={note}
                   className="text-sm font-medium leading-relaxed text-muted"
                 >
-                  ・{note}
+                  ?{note}
                 </li>
               ))}
             </ul>
             <p className="mt-4 text-xs text-muted">
-              取扱: {payment.agency}（TEL {payment.agencyPhone}）
+              ??: {payment.agency}?TEL {payment.agencyPhone}?
             </p>
           </Card>
         </FadeIn>
