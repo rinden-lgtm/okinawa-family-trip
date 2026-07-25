@@ -33,9 +33,11 @@ export function HotelSection() {
             description={hotel.nameEn}
           >
             {"roomType" in hotel && hotel.roomType ? (
-              <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-extrabold text-white shadow-[0_8px_20px_rgba(255,107,92,0.3)]">
-                <BedDouble className="h-4 w-4" />
-                {hotel.roomType}
+              <p className="mx-auto mt-5 inline-flex max-w-[min(100%,22rem)] flex-col items-center gap-1 rounded-full bg-gold px-4 py-2.5 text-center text-sm font-extrabold leading-snug text-white shadow-[0_8px_20px_rgba(255,107,92,0.3)] sm:max-w-none sm:flex-row sm:gap-2 sm:py-2">
+                <BedDouble className="h-4 w-4 shrink-0" />
+                <span className="whitespace-pre-line sm:whitespace-normal">
+                  {hotel.roomType.replace(" ", "\n")}
+                </span>
               </p>
             ) : null}
           </SectionHeading>

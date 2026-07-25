@@ -164,7 +164,7 @@ export function ScheduleSection() {
                   <h3 className="font-display text-xl font-semibold text-hilton-deep">
                     {rentalCars.title}
                   </h3>
-                  <p className="mt-1 text-sm font-medium leading-relaxed text-hilton-deep/80">
+                  <p className="mt-1 whitespace-pre-line text-sm font-medium leading-relaxed text-hilton-deep/80">
                     {rentalCars.note}
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export function ScheduleSection() {
                   <p className="text-xs font-extrabold tracking-wide text-gold">
                     {period.label}
                   </p>
-                  <p className="mt-1 font-display text-lg font-semibold text-hilton-deep">
+                  <p className="mt-1 whitespace-pre-line font-display text-lg font-semibold text-hilton-deep">
                     {period.summary}
                   </p>
                   <ul className="mt-4 space-y-3">
@@ -193,7 +193,7 @@ export function ScheduleSection() {
                           <span className="mr-1.5 text-gold">{vehicle.no}</span>
                           {vehicle.type}
                         </p>
-                        <p className="mt-1 text-sm font-medium text-muted">
+                        <p className="mt-1 whitespace-pre-line text-sm font-medium leading-relaxed text-muted">
                           {vehicle.assignment}
                         </p>
                       </li>
