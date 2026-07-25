@@ -84,8 +84,13 @@ npm start
 5. Root Directory: リポジトリ直下
 6. **Deploy**
 
-デプロイ後、`https://xxxx.vercel.app` のような URL が発行されます。  
-家族・親族への共有は、この URL を送ればOKです。
+### 公開URL（現在）
+
+- 本番: https://okinawa-family-trip-eight.vercel.app
+- GitHub: https://github.com/rinden-lgtm/okinawa-family-trip
+
+家族・親族への共有は、本番URLを送ればOKです。  
+GitHub の `master` へ Push すると、Vercel が自動で再デプロイします。
 
 ### 独自ドメインへの変更
 
