@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "id": "groom-family",
+      "name": "新郎側家族",
+      "members": [
+        { "name": "武司" },
+        { "name": "圭子" },
+        { "name": "亮太" }
+      ]
+    },
+    {
+      "id": "bride-family",
+      "name": "新婦側家族",
+      "members": [
+        { "name": "健一" },
+        { "name": "美咲" },
+        { "name": "陽菜" },
+        { "name": "悠真", "note": "子ども" }
+      ]
+    },
+    {
+      "id": "relatives-a",
+      "name": "親族A",
+      "members": [
+        { "name": "誠" },
+        { "name": "由美" }
+      ]
+    },
+    {
+      "id": "relatives-b",
+      "name": "親族B",
+      "members": [
+        { "name": "大輔" },
+        { "name": "さくら" },
+        { "name": "蓮", "note": "子ども" }
+      ]
+    }
+  ]
+}

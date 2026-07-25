@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --hilton-blue: #003a70;
+  --hilton-blue-deep: #00284d;
+  --hilton-blue-soft: #e8eef5;
+  --gold: #b8965a;
+  --gold-light: #d4bc8a;
+  --gold-muted: #f7f1e6;
+  --background: #fafbfc;
+  --foreground: #1a2332;
+  --muted: #5c6b7a;
+  --card: #ffffff;
+  --border: #e4e9ef;
+  --shadow-soft: 0 12px 40px rgba(0, 58, 112, 0.08);
+  --shadow-float: 0 18px 50px rgba(0, 58, 112, 0.12);
 }
 
 @theme inline {
+  --color-hilton: var(--hilton-blue);
+  --color-hilton-deep: var(--hilton-blue-deep);
+  --color-hilton-soft: var(--hilton-blue-soft);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-muted: var(--gold-muted);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), "Hiragino Sans", "Noto Sans JP", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--hilton-blue) 20%, white);
+  color: var(--hilton-blue-deep);
+}
+
+.section-pad {
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-inline: 3rem;
+  }
+}
+
+.luxury-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
+}
+
+.gold-rule {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 40, 77, 0.35) 0%,
+      rgba(0, 40, 77, 0.25) 40%,
+      rgba(0, 40, 77, 0.55) 100%
+    );
 }

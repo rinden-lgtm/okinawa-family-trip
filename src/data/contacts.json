@@ -1,0 +1,52 @@
+{
+  "contacts": [
+    {
+      "id": "hotel",
+      "label": "ホテル",
+      "name": "ザ・ビーチリゾート瀬底 by ヒルトンクラブ",
+      "phone": "0980-47-6300",
+      "note": "フロント 24時間対応",
+      "icon": "hotel"
+    },
+    {
+      "id": "flight",
+      "label": "飛行機",
+      "name": "航空会社・予約確認",
+      "phone": "",
+      "note": "予約番号・便名は各自のチケットを確認",
+      "icon": "plane"
+    },
+    {
+      "id": "lead",
+      "label": "代表者",
+      "name": "武司",
+      "phone": "090-0000-0000",
+      "note": "旅程・緊急時の窓口（番号は後で更新）",
+      "icon": "user"
+    },
+    {
+      "id": "hospital",
+      "label": "病院",
+      "name": "北部地区医師会病院",
+      "phone": "0980-52-2719",
+      "note": "沖縄県名護市大北1656",
+      "icon": "hospital"
+    },
+    {
+      "id": "police",
+      "label": "警察",
+      "name": "警察（緊急）",
+      "phone": "110",
+      "note": "事件・事故の際はこちら",
+      "icon": "shield"
+    },
+    {
+      "id": "ambulance",
+      "label": "救急",
+      "name": "救急・消防",
+      "phone": "119",
+      "note": "急病・火災の際はこちら",
+      "icon": "ambulance"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ザ・ビーチリゾート瀬底 by ヒルトンクラブ",
+  "nameEn": "The Beach Resort Sesoko by Hilton Club",
+  "phone": "0980-47-6300",
+  "address": "沖縄県国頭郡本部町瀬底1081-4",
+  "checkIn": "16:00",
+  "checkOut": "10:00",
+  "website": "https://www.hgvc.co.jp/japan/the-beach-resort-sesoko-by-hilton-club/",
+  "mapEmbedUrl": "https://www.google.com/maps?q=26.6408,127.8642&hl=ja&z=15&output=embed",
+  "images": [
+    {
+      "src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
+      "alt": "リゾートホテル外観",
+      "label": "外観"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&q=80",
+      "alt": "ホテルプール",
+      "label": "プール"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+      "alt": "沖縄のビーチ",
+      "label": "ビーチ"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=80",
+      "alt": "ホテル客室",
+      "label": "客室"
+    }
+  ]
+}

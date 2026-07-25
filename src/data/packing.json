@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": "passport",
+      "label": "パスポート不要",
+      "note": "国内旅行のため不要です",
+      "category": "書類"
+    },
+    {
+      "id": "wallet",
+      "label": "財布",
+      "category": "貴重品"
+    },
+    {
+      "id": "insurance",
+      "label": "保険証",
+      "category": "書類"
+    },
+    {
+      "id": "swimsuit",
+      "label": "水着",
+      "category": "衣類"
+    },
+    {
+      "id": "sandals",
+      "label": "サンダル",
+      "category": "衣類"
+    },
+    {
+      "id": "sunscreen",
+      "label": "日焼け止め",
+      "category": "ケア"
+    },
+    {
+      "id": "clothes",
+      "label": "着替え",
+      "note": "フォーマル・カジュアル両方",
+      "category": "衣類"
+    },
+    {
+      "id": "charger",
+      "label": "充電器",
+      "category": "電化製品"
+    },
+    {
+      "id": "medicine",
+      "label": "薬",
+      "note": "常備薬・酔い止めなど",
+      "category": "ケア"
+    },
+    {
+      "id": "kids",
+      "label": "子ども用品",
+      "note": "おむつ・おもちゃ・着替えなど",
+      "category": "子ども"
+    },
+    {
+      "id": "hat",
+      "label": "帽子",
+      "category": "衣類"
+    },
+    {
+      "id": "insect",
+      "label": "虫除けスプレー",
+      "category": "ケア"
+    }
+  ]
+}
