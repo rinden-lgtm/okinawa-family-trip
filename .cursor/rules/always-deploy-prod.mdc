@@ -1,0 +1,16 @@
+---
+description: Always deploy site changes to Vercel production
+alwaysApply: true
+---
+
+# Production deploy with every change
+
+When making user-facing or content changes to this site (UI, data, copy, images, sections):
+
+1. Implement the change.
+2. **In the same turn**, commit, push to `origin/master`, and deploy with `npx vercel --prod --yes`.
+3. Reply with the production URL: https://okinawa-family-trip-eight.vercel.app
+
+Do not wait for the user to say「本番反映して」or「URLにも反映して」.
+
+Exceptions: pure questions, exploration with no edits, or when the user explicitly says not to deploy.
