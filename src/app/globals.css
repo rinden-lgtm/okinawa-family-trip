@@ -54,6 +54,8 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -165,7 +167,7 @@ body {
 
 .section-block {
   scroll-margin-top: calc(4.75rem + env(safe-area-inset-top, 0px));
-  padding-block: 3.5rem;
+  padding-block: 2.75rem;
 }
 
 @media (min-width: 768px) {

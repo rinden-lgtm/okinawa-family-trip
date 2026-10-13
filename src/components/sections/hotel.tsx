@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, SlideIn, ScaleIn } from "@/components/motion/reveal";
+import { TouchMap } from "@/components/touch-map";
 
 export function HotelSection() {
   const lounge = hotel.executiveLounge;
@@ -151,7 +152,7 @@ export function HotelSection() {
                     </p>
                     <a
                       href={`tel:${hotel.phone.replace(/-/g, "")}`}
-                      className="mt-1 block font-medium text-hilton hover:underline"
+                      className="mt-1 inline-flex min-h-11 items-center font-medium text-hilton hover:underline"
                     >
                       {hotel.phone}
                     </a>
@@ -199,13 +200,10 @@ export function HotelSection() {
 
           <SlideIn from="right" delay={0.08}>
             <Card className="overflow-hidden p-0">
-              <iframe
+              <TouchMap
                 title="ホテル地図"
                 src={hotel.mapEmbedUrl}
-                className="h-[320px] w-full border-0 md:h-full md:min-h-[360px]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
+                className="h-[280px] w-full border-0 sm:h-[320px] md:h-full md:min-h-[360px]"
               />
             </Card>
           </SlideIn>

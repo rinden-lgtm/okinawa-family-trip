@@ -13,6 +13,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
+import { TouchMap } from "@/components/touch-map";
 import { cn } from "@/lib/utils";
 
 type Filter = "all" | "kids";
@@ -72,7 +73,7 @@ export function SpotsSection() {
         </FadeIn>
 
         <FadeIn delay={0.04}>
-          <div className="mb-6 inline-flex rounded-full border-2 border-hilton/15 bg-white p-1 shadow-sm">
+          <div className="mb-6 flex w-full gap-1 rounded-full border-2 border-hilton/15 bg-white p-1 shadow-sm sm:inline-flex sm:w-auto">
             {(
               [
                 { id: "all" as const, label: "すべて" },
@@ -84,7 +85,7 @@ export function SpotsSection() {
                 type="button"
                 onClick={() => setFilter(tab.id)}
                 className={cn(
-                  "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold transition",
+                  "inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm font-bold transition sm:flex-none sm:px-4",
                   filter === tab.id
                     ? "bg-hilton text-white shadow-sm"
                     : "text-hilton-deep hover:bg-hilton-soft"
@@ -105,14 +106,11 @@ export function SpotsSection() {
             className="scroll-mt-[calc(4.75rem+env(safe-area-inset-top,0px))] md:scroll-mt-[5.5rem]"
           >
             <Card className="overflow-hidden p-0">
-              <iframe
+              <TouchMap
                 key={active.id}
                 title={`${active.name}の地図`}
                 src={embedFor(active.lat, active.lng)}
-                className="h-[280px] w-full border-0 md:h-[380px]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
+                className="h-[240px] w-full border-0 sm:h-[280px] md:h-[380px]"
               />
               <div className="flex flex-col gap-3 border-t border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
                 <div>

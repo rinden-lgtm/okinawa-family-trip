@@ -24,27 +24,27 @@ export function RoomsSection() {
         <div className="grid gap-4 sm:grid-cols-2">
           {roomsData.rooms.map((room, index) => (
             <ScaleIn key={room.id} delay={index * 0.06}>
-              <Card className="h-full p-6">
-                <div className="mb-4 flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-hilton-soft text-hilton">
-                      <BedDouble className="h-5 w-5" strokeWidth={1.6} />
-                    </span>
-                    <div>
+              <Card className="h-full p-4 sm:p-6">
+                <div className="mb-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-hilton-soft text-hilton">
+                        <BedDouble className="h-5 w-5" strokeWidth={1.6} />
+                      </span>
                       <h3 className="font-display text-xl tracking-wide text-hilton">
                         {room.name}
                       </h3>
-                      {room.type ? (
-                        <p className="text-xs tracking-wide text-gold">
-                          {room.type}
-                        </p>
-                      ) : null}
                     </div>
+                    <p className="shrink-0 pt-1 text-xs font-bold text-muted">
+                      大人{room.adults}名
+                      {room.children ? ` / 子ども${room.children}名` : ""}
+                    </p>
                   </div>
-                  <p className="text-xs text-muted">
-                    大人{room.adults}名
-                    {room.children ? ` / 子ども${room.children}名` : ""}
-                  </p>
+                  {room.type ? (
+                    <p className="mt-2 text-xs font-bold leading-snug text-gold">
+                      {room.type}
+                    </p>
+                  ) : null}
                 </div>
                 <ul className="space-y-2">
                   {room.guests.map((guest) => (

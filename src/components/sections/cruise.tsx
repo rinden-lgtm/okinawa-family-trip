@@ -43,7 +43,7 @@ export function CruiseSection() {
           </Card>
         </SlideIn>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {[
             {
               icon: MapPin,
@@ -76,7 +76,7 @@ export function CruiseSection() {
                   <p className="text-xs font-bold tracking-wide text-muted">
                     {item.label}
                   </p>
-                  <p className="mt-1 font-display text-lg font-semibold text-hilton-deep">
+                  <p className="mt-1 font-display text-base font-semibold leading-snug text-hilton-deep sm:text-lg">
                     {item.value}
                   </p>
                 </Card>

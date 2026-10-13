@@ -58,7 +58,7 @@ function Timeline({ items }: { items: ScheduleItem[] }) {
         const Icon = item.icon ? iconMap[item.icon] ?? Sparkles : Sparkles;
         const isLast = index === items.length - 1;
         return (
-          <li key={`${item.title}-${index}`} className="relative flex gap-4 pb-8 last:pb-0">
+          <li key={`${item.title}-${index}`} className="relative flex gap-3 pb-7 last:pb-0 sm:gap-4 sm:pb-8">
             {!isLast ? (
               <span className="absolute left-[19px] top-10 h-[calc(100%-1.5rem)] w-[3px] rounded-full bg-gradient-to-b from-hilton via-sunny to-gold" />
             ) : null}
@@ -71,7 +71,7 @@ function Timeline({ items }: { items: ScheduleItem[] }) {
               {item.time ? (
                 <p className="text-xs font-bold tracking-wide text-gold">{item.time}</p>
               ) : null}
-              <h4 className="mt-1 font-display text-lg font-semibold text-hilton-deep">
+              <h4 className="mt-1 font-display text-lg font-semibold leading-snug text-hilton-deep">
                 {item.title}
               </h4>
               {item.description ? (
@@ -114,13 +114,13 @@ export function ScheduleSection() {
                 type="button"
                 onClick={() => setActiveDay(day.id)}
                 className={cn(
-                  "min-w-0 rounded-2xl border-2 px-1.5 py-2 text-center font-bold transition active:scale-95 sm:px-3 sm:py-2.5 sm:text-left",
+                  "min-h-12 min-w-0 rounded-2xl border-2 px-1.5 py-2 text-center font-bold transition active:scale-95 sm:px-3 sm:py-2.5 sm:text-left",
                   activeDay === day.id
                     ? "border-hilton bg-hilton text-white shadow-[0_8px_24px_rgba(10,160,192,0.35)]"
                     : "border-border bg-white text-hilton-deep hover:border-hilton/40 hover:bg-hilton-soft"
                 )}
               >
-                <span className="block text-[10px] tracking-wider opacity-80 sm:text-xs">
+                <span className="block text-[11px] tracking-wider opacity-80 sm:text-xs">
                   {day.label}
                 </span>
                 <span className="mt-0.5 block text-xs sm:hidden">
@@ -133,7 +133,7 @@ export function ScheduleSection() {
         </FadeIn>
 
         <SlideIn key={current.id}>
-          <Card className="p-6 md:p-8">
+          <Card className="p-4 sm:p-6 md:p-8">
             <div className="mb-8 border-b border-border pb-5">
               <p className="inline-flex rounded-full bg-gold-muted px-3 py-1 text-xs font-bold uppercase tracking-wide text-gold">
                 {current.label}

@@ -6,6 +6,7 @@ import mapData from "@/data/map.json";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
+import { TouchMap } from "@/components/touch-map";
 import { cn } from "@/lib/utils";
 
 function embedFor(lat: number, lng: number, zoom = 14) {
@@ -51,14 +52,11 @@ export function MapSection() {
             className="scroll-mt-[calc(4.75rem+env(safe-area-inset-top,0px))] md:scroll-mt-[5.5rem]"
           >
             <Card className="overflow-hidden p-0">
-              <iframe
+              <TouchMap
                 key={active.id}
                 title={`${active.name}の地図`}
                 src={embedFor(active.lat, active.lng)}
-                className="h-[320px] w-full border-0 md:h-[420px]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
+                className="h-[280px] w-full border-0 sm:h-[320px] md:h-[420px]"
               />
             </Card>
           </div>
@@ -84,7 +82,7 @@ export function MapSection() {
                     target="_blank"
                     rel="noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="rounded-md p-1 text-muted hover:text-hilton"
+                    className="flex h-11 w-11 items-center justify-center rounded-full text-muted hover:bg-hilton-soft hover:text-hilton"
                     aria-label={`${place.name}をGoogle Mapsで開く`}
                   >
                     <ExternalLink className="h-4 w-4" />
