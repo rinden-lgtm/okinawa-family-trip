@@ -98,6 +98,9 @@ export function WeddingSection() {
               <p className="font-display text-3xl font-semibold text-hilton-deep">
                 {wedding.ceremony.time}
               </p>
+              <p className="mt-2 text-sm font-bold text-hilton-deep">
+                集合 {wedding.ceremony.meetingTime}　{wedding.ceremony.meetingPlace}
+              </p>
               <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-sunny-soft px-3 py-1.5 text-xs font-bold text-[#c27803]">
                 <Shirt className="h-3.5 w-3.5" strokeWidth={2.4} />
                 {wedding.ceremony.dressCode}

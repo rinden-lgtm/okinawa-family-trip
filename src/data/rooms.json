@@ -47,8 +47,8 @@
       "id": "room6",
       "name": "Room 6",
       "type": "エグゼクティブルーム オーシャンビュー",
-      "guests": ["明石 正夫", "明石 省吾", "明石 佑介", "明石 智也"],
-      "adults": 4,
+      "guests": ["明石 正夫", "明石 省吾", "明石 智也"],
+      "adults": 3,
       "children": 0
     },
     {
@@ -56,9 +56,8 @@
       "name": "Room 7",
       "type": "エグゼクティブルーム オーシャンビュー",
       "guests": ["明石 太一", "村上 流風"],
-      "adults": 1,
-      "children": 1,
-      "note": "お子さま連れ"
+      "adults": 2,
+      "children": 0
     },
     {
       "id": "room8",
