@@ -40,7 +40,6 @@ npm start
 | `src/data/hotel.json` | ホテル情報・写真・地図 |
 | `src/data/wedding.json` | 挙式・宴会 |
 | `src/data/cruise.json` | サンセットクルーズ |
-| `src/data/payment.json` | 飛行機代・振込先 |
 | `src/data/schedule.json` | スケジュール（Day1〜4） |
 | `src/data/rooms.json` | 部屋割り |
 | `src/data/map.json` | MAPピン |

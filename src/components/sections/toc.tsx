@@ -5,7 +5,6 @@ import {
   Building2,
   Heart,
   Ship,
-  Banknote,
   CalendarDays,
   BedDouble,
   Phone,
@@ -51,13 +50,6 @@ const items: {
     description: "11/2 サンセット",
     icon: Ship,
     tone: "bg-lavender-soft text-lavender",
-  },
-  {
-    href: "#payment",
-    label: "飛行機代",
-    description: "振込先・期限",
-    icon: Banknote,
-    tone: "bg-mint-soft text-mint",
   },
   {
     href: "#schedule",

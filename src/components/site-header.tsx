@@ -9,7 +9,6 @@ const links = [
   { href: "#hotel", label: "ホテル" },
   { href: "#wedding", label: "挙式" },
   { href: "#cruise", label: "クルーズ" },
-  { href: "#payment", label: "飛行機代" },
   { href: "#schedule", label: "日程" },
   { href: "#rooms", label: "部屋" },
   { href: "#map", label: "MAP" },

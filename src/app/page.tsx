@@ -4,7 +4,6 @@ import { OverviewSection } from "@/components/sections/overview";
 import { HotelSection } from "@/components/sections/hotel";
 import { WeddingSection } from "@/components/sections/wedding";
 import { CruiseSection } from "@/components/sections/cruise";
-import { PaymentSection } from "@/components/sections/payment";
 import { ScheduleSection } from "@/components/sections/schedule";
 import { RoomsSection } from "@/components/sections/rooms";
 import { MapSection } from "@/components/sections/map";
@@ -37,9 +36,6 @@ export default function HomePage() {
             <CruiseSection />
           </div>
           <div className="section-band">
-            <PaymentSection />
-          </div>
-          <div className="section-band section-band-warm">
             <ScheduleSection />
           </div>
           <div className="section-band section-band-mint">
