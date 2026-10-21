@@ -5,6 +5,15 @@
   "address": "沖縄県国頭郡本部町瀬底5750",
   "checkIn": "15:00",
   "checkOut": "11:00",
+  "sameDayArrival": {
+    "label": "式当日（11/1）に入る方へ",
+    "checkInLabel": "チェックイン",
+    "checkIn": "15:00",
+    "meetingLabel": "ロビー集合",
+    "meetingTime": "16:00",
+    "meetingPlace": "ホテルロビー",
+    "message": "チェックインは15時から。式当日に到着する方は、荷物を置いたら16時にホテルロビーへ集合してください。間が1時間しかないので、気をつけて。"
+  },
   "website": "https://sesoko.hiltonjapan.co.jp/",
   "mapEmbedUrl": "https://www.google.com/maps?q=ヒルトン沖縄瀬底リゾート&hl=ja&z=15&output=embed",
   "roomType": "エグゼクティブルーム オーシャンビュー",

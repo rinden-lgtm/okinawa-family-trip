@@ -13,6 +13,7 @@ import wedding from "@/data/wedding.json";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
+import { SameDayArrivalNotice } from "@/components/same-day-arrival-notice";
 
 export function WeddingSection() {
   return (
@@ -24,6 +25,12 @@ export function WeddingSection() {
             title="挙式・宴会"
             description={`${wedding.date} ／ ${wedding.venue}`}
           />
+        </FadeIn>
+
+        <FadeIn delay={0.04}>
+          <div className="mb-8">
+            <SameDayArrivalNotice />
+          </div>
         </FadeIn>
 
         <SlideIn>

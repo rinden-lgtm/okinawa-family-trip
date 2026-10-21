@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, SlideIn } from "@/components/motion/reveal";
+import { SameDayArrivalNotice } from "@/components/same-day-arrival-notice";
 
 const iconMap: Record<string, LucideIcon> = {
   plane: Plane,
@@ -67,15 +68,35 @@ function Timeline({ items }: { items: ScheduleItem[] }) {
             >
               <Icon className="h-4 w-4" strokeWidth={2.2} />
             </span>
-            <div className="min-w-0 flex-1 pt-1">
+            <div
+              className={cn(
+                "min-w-0 flex-1 pt-1",
+                item.alert &&
+                  "rounded-2xl border-2 border-gold bg-gold-muted px-4 py-3"
+              )}
+            >
               {item.time ? (
-                <p className="text-xs font-bold tracking-wide text-gold">{item.time}</p>
+                <p
+                  className={cn(
+                    "font-bold tracking-wide text-gold",
+                    item.alert ? "font-display text-2xl" : "text-xs"
+                  )}
+                >
+                  {item.time}
+                </p>
               ) : null}
               <h4 className="mt-1 font-display text-lg font-semibold leading-snug text-hilton-deep">
                 {item.title}
               </h4>
               {item.description ? (
-                <p className="mt-1.5 text-sm font-medium leading-relaxed text-muted">
+                <p
+                  className={cn(
+                    "mt-1.5 text-sm leading-relaxed",
+                    item.alert
+                      ? "font-bold text-hilton-deep"
+                      : "font-medium text-muted"
+                  )}
+                >
                   {item.description}
                 </p>
               ) : null}
@@ -145,6 +166,12 @@ export function ScheduleSection() {
                 <p className="mt-2 text-sm font-medium text-muted">{current.subtitle}</p>
               ) : null}
             </div>
+
+            {current.id === "day2" ? (
+              <div className="mb-8">
+                <SameDayArrivalNotice />
+              </div>
+            ) : null}
 
             <Timeline
               items={

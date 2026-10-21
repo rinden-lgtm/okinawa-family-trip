@@ -18,6 +18,7 @@ import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, SlideIn, ScaleIn } from "@/components/motion/reveal";
 import { TouchMap } from "@/components/touch-map";
+import { SameDayArrivalNotice } from "@/components/same-day-arrival-notice";
 
 export function HotelSection() {
   const lounge = hotel.executiveLounge;
@@ -42,6 +43,12 @@ export function HotelSection() {
               </p>
             ) : null}
           </SectionHeading>
+        </FadeIn>
+
+        <FadeIn delay={0.04}>
+          <div className="mb-8">
+            <SameDayArrivalNotice />
+          </div>
         </FadeIn>
 
         <div className="grid grid-cols-2 gap-3 md:gap-4">

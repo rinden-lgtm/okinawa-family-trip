@@ -33,6 +33,7 @@ export type ScheduleItem = {
   title: string;
   description?: string;
   icon?: string;
+  alert?: boolean;
 };
 
 export type DaySchedule = {
