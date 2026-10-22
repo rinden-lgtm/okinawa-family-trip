@@ -167,7 +167,7 @@ body {
 
 .section-block {
   scroll-margin-top: calc(4.75rem + env(safe-area-inset-top, 0px));
-  padding-block: 2.75rem;
+  padding-block: 2.25rem;
 }
 
 @media (min-width: 768px) {

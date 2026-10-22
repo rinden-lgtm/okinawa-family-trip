@@ -86,7 +86,7 @@ export function HotelSection() {
 
         {"roomDescription" in hotel && hotel.roomDescription ? (
           <FadeIn delay={0.05}>
-            <Card className="mt-6 p-6 md:p-8">
+            <Card className="mt-6 p-4 sm:p-6 md:p-8">
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                 <div className="max-w-2xl">
                   <p className="text-xs font-bold uppercase tracking-wide text-gold">
@@ -141,7 +141,7 @@ export function HotelSection() {
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           <SlideIn>
-            <Card className="h-full p-6 md:p-8">
+            <Card className="h-full p-4 sm:p-6 md:p-8">
               <h3 className="font-display text-xl font-semibold text-hilton-deep">
                 {hotel.name}
               </h3>
@@ -186,7 +186,7 @@ export function HotelSection() {
                   </div>
                 </div>
               </div>
-              <Button asChild className="mt-8 w-full sm:w-auto" variant="gold">
+              <Button asChild className="mt-6 w-full sm:mt-8 sm:w-auto" variant="gold">
                 <a href={hotel.website} target="_blank" rel="noreferrer">
                   公式サイト
                   <ExternalLink className="h-4 w-4" />
@@ -228,7 +228,7 @@ export function HotelSection() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="p-6 md:p-8">
+              <div className="p-4 sm:p-6 md:p-8">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gold-muted text-gold">
                     <Wine className="h-5 w-5" strokeWidth={2.2} />
@@ -341,7 +341,7 @@ export function HotelSection() {
                     </div>
                   ) : null}
 
-                  <div className="flex flex-1 flex-col p-6 md:p-8">
+                  <div className="flex flex-1 flex-col p-4 sm:p-6 md:p-8">
                     <div className="mb-4 flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-hilton-soft text-hilton">
                         <Waves className="h-5 w-5" strokeWidth={2.2} />

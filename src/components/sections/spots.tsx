@@ -73,7 +73,7 @@ export function SpotsSection() {
         </FadeIn>
 
         <FadeIn delay={0.04}>
-          <div className="mb-6 flex w-full gap-1 rounded-full border-2 border-hilton/15 bg-white p-1 shadow-sm sm:inline-flex sm:w-auto">
+          <div className="mb-6 flex w-full gap-1 rounded-2xl border-2 border-hilton/15 bg-white p-1 shadow-sm sm:inline-flex sm:w-auto sm:rounded-full">
             {(
               [
                 { id: "all" as const, label: "すべて" },
@@ -85,7 +85,7 @@ export function SpotsSection() {
                 type="button"
                 onClick={() => setFilter(tab.id)}
                 className={cn(
-                  "inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm font-bold transition sm:flex-none sm:px-4",
+                  "inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-xl px-2 py-2 text-center text-[13px] font-bold leading-tight transition sm:flex-none sm:rounded-full sm:px-4 sm:text-sm",
                   filter === tab.id
                     ? "bg-hilton text-white shadow-sm"
                     : "text-hilton-deep hover:bg-hilton-soft"

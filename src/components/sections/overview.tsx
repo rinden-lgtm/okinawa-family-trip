@@ -30,7 +30,7 @@ export function OverviewSection() {
 
         <div className="grid gap-4 md:grid-cols-2">
           <SlideIn>
-            <Card className="h-full p-6 md:p-8">
+            <Card className="h-full p-4 sm:p-6 md:p-8">
               <div className="mb-5 flex items-center gap-3 text-hilton-deep">
                 <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-hilton-soft">
                   <Calendar className="h-5 w-5 text-hilton" strokeWidth={2.2} />
@@ -52,7 +52,7 @@ export function OverviewSection() {
           </SlideIn>
 
           <SlideIn from="right" delay={0.08}>
-            <Card className="h-full p-6 md:p-8">
+            <Card className="h-full p-4 sm:p-6 md:p-8">
               <div className="mb-5 flex items-center gap-3 text-hilton-deep">
                 <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gold-muted">
                   <Hotel className="h-5 w-5 text-gold" strokeWidth={2.2} />

@@ -26,7 +26,7 @@ export function RoomsSection() {
             <ScaleIn key={room.id} delay={index * 0.06}>
               <Card className="h-full p-4 sm:p-6">
                 <div className="mb-4">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1">
                     <div className="flex min-w-0 items-center gap-3">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-hilton-soft text-hilton">
                         <BedDouble className="h-5 w-5" strokeWidth={1.6} />

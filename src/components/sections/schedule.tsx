@@ -91,7 +91,7 @@ function Timeline({ items }: { items: ScheduleItem[] }) {
               {item.description ? (
                 <p
                   className={cn(
-                    "mt-1.5 text-sm leading-relaxed",
+                    "mt-1.5 text-[15px] leading-relaxed sm:text-sm",
                     item.alert
                       ? "font-bold text-hilton-deep"
                       : "font-medium text-muted"
@@ -128,26 +128,23 @@ export function ScheduleSection() {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <div className="mb-6 grid grid-cols-4 gap-1.5 sm:gap-2">
+          <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
             {days.map((day) => (
               <button
                 key={day.id}
                 type="button"
                 onClick={() => setActiveDay(day.id)}
                 className={cn(
-                  "min-h-12 min-w-0 rounded-2xl border-2 px-1.5 py-2 text-center font-bold transition active:scale-95 sm:px-3 sm:py-2.5 sm:text-left",
+                  "min-h-14 min-w-0 rounded-2xl border-2 px-3 py-2.5 text-center font-bold transition active:scale-95 sm:px-3 sm:text-left",
                   activeDay === day.id
                     ? "border-hilton bg-hilton text-white shadow-[0_8px_24px_rgba(10,160,192,0.35)]"
                     : "border-border bg-white text-hilton-deep hover:border-hilton/40 hover:bg-hilton-soft"
                 )}
               >
-                <span className="block text-[11px] tracking-wider opacity-80 sm:text-xs">
+                <span className="block text-xs tracking-wider opacity-80">
                   {day.label}
                 </span>
-                <span className="mt-0.5 block text-xs sm:hidden">
-                  {day.date.replace(/（.+）/, "")}
-                </span>
-                <span className="mt-0.5 hidden text-sm sm:block">{day.date}</span>
+                <span className="mt-0.5 block text-sm leading-tight">{day.date}</span>
               </button>
             ))}
           </div>
@@ -185,7 +182,7 @@ export function ScheduleSection() {
 
         <FadeIn delay={0.08}>
           <Card className="mt-6 overflow-hidden p-0">
-            <div className="border-b border-border bg-gradient-to-r from-hilton-soft via-mint-soft to-sunny-soft px-5 py-5 md:px-8">
+            <div className="border-b border-border bg-gradient-to-r from-hilton-soft via-mint-soft to-sunny-soft px-4 py-4 sm:px-5 sm:py-5 md:px-8">
               <div className="flex items-center gap-3">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-hilton shadow-sm">
                   <Car className="h-5 w-5" strokeWidth={2.2} />
@@ -205,7 +202,7 @@ export function ScheduleSection() {
               {rentalCars.periods.map((period) => (
                 <div
                   key={period.id}
-                  className="border-b border-border px-5 py-5 last:border-b-0 md:border-b-0 md:px-8 md:py-6 md:odd:border-r"
+                  className="border-b border-border px-4 py-4 last:border-b-0 sm:px-5 sm:py-5 md:border-b-0 md:px-8 md:py-6 md:odd:border-r"
                 >
                   <p className="text-xs font-extrabold tracking-wide text-gold">
                     {period.label}

@@ -49,7 +49,7 @@ export function ContactsSection() {
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-hilton-soft text-hilton">
                       <Icon className="h-5 w-5" strokeWidth={1.6} />
                     </span>
-                    <p className="text-xs uppercase tracking-[0.2em] text-gold">
+                    <p className="text-xs font-bold tracking-wide text-gold">
                       {contact.label}
                     </p>
                   </div>
@@ -66,7 +66,7 @@ export function ContactsSection() {
                     </a>
                   ) : null}
                   {contact.note ? (
-                    <p className="mt-3 whitespace-pre-line text-xs leading-relaxed text-muted">
+                    <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted">
                       {contact.note}
                     </p>
                   ) : null}

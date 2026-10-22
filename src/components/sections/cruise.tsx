@@ -43,7 +43,7 @@ export function CruiseSection() {
           </Card>
         </SlideIn>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
           {[
             {
               icon: MapPin,
@@ -69,14 +69,14 @@ export function CruiseSection() {
             const Icon = item.icon;
             return (
               <ScaleIn key={item.label} delay={index * 0.05}>
-                <Card className="h-full p-5">
+                <Card className="h-full min-w-0 p-3.5 sm:p-5">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-sunny-soft text-[#c27803]">
                     <Icon className="h-5 w-5" strokeWidth={2.2} />
                   </div>
                   <p className="text-xs font-bold tracking-wide text-muted">
                     {item.label}
                   </p>
-                  <p className="mt-1 font-display text-base font-semibold leading-snug text-hilton-deep sm:text-lg">
+                  <p className="mt-1 break-words font-display text-sm font-semibold leading-snug text-hilton-deep sm:text-lg">
                     {item.value}
                   </p>
                 </Card>
@@ -86,7 +86,7 @@ export function CruiseSection() {
         </div>
 
         <FadeIn delay={0.08}>
-          <Card className="mt-6 p-6 md:p-8">
+          <Card className="mt-6 p-4 sm:p-6 md:p-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div>
                 <div className="mb-3 flex items-center gap-2 text-hilton-deep">
@@ -106,7 +106,7 @@ export function CruiseSection() {
                   ))}
                 </ul>
               </div>
-              <Button asChild variant="gold" className="shrink-0">
+              <Button asChild variant="gold" className="w-full shrink-0 sm:w-auto">
                 <a href={cruise.mapsUrl} target="_blank" rel="noreferrer">
                   宜野湾港マリーナを地図で開く
                   <ExternalLink className="h-4 w-4" />

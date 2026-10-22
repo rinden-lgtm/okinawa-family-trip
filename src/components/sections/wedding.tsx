@@ -51,7 +51,7 @@ export function WeddingSection() {
           </Card>
         </SlideIn>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
           {[
             {
               icon: CalendarDays,
@@ -77,14 +77,14 @@ export function WeddingSection() {
             const Icon = item.icon;
             return (
               <ScaleIn key={item.label} delay={index * 0.05}>
-                <Card className="h-full p-5">
+                <Card className="h-full min-w-0 p-3.5 sm:p-5">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-gold-muted text-gold">
                     <Icon className="h-5 w-5" strokeWidth={2.2} />
                   </div>
                   <p className="text-xs font-bold tracking-wide text-muted">
                     {item.label}
                   </p>
-                  <p className="mt-1 font-display text-base font-semibold leading-snug text-hilton-deep sm:text-lg">
+                  <p className="mt-1 break-words font-display text-sm font-semibold leading-snug text-hilton-deep sm:text-lg">
                     {item.value}
                   </p>
                 </Card>
@@ -95,7 +95,7 @@ export function WeddingSection() {
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           <FadeIn delay={0.06}>
-            <Card className="h-full p-6 md:p-8">
+            <Card className="h-full p-4 sm:p-6 md:p-8">
               <div className="mb-3 flex items-center gap-2 text-hilton-deep">
                 <Heart className="h-5 w-5 text-gold" />
                 <h3 className="font-display text-xl font-semibold">
@@ -119,7 +119,7 @@ export function WeddingSection() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <Card className="h-full p-6 md:p-8">
+            <Card className="h-full p-4 sm:p-6 md:p-8">
               <div className="mb-3 flex items-center gap-2 text-hilton-deep">
                 <Utensils className="h-5 w-5 text-gold" />
                 <h3 className="font-display text-xl font-semibold">
@@ -140,7 +140,7 @@ export function WeddingSection() {
         </div>
 
         <FadeIn delay={0.12}>
-          <Card className="mt-6 p-6 md:p-8">
+          <Card className="mt-6 p-4 sm:p-6 md:p-8">
             <div className="mb-3 flex items-center gap-2 text-hilton-deep">
               <Heart className="h-5 w-5 text-gold" />
               <h3 className="font-display text-xl font-semibold">ご案内</h3>
