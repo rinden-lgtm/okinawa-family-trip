@@ -4,12 +4,15 @@ import Image from "next/image";
 import {
   CalendarDays,
   Clock,
+  ExternalLink,
   Heart,
   MapPin,
+  Phone,
   Shirt,
   Utensils,
 } from "lucide-react";
 import wedding from "@/data/wedding.json";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeIn, ScaleIn, SlideIn } from "@/components/motion/reveal";
@@ -139,7 +142,77 @@ export function WeddingSection() {
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.12}>
+        {"kariyushi" in wedding && wedding.kariyushi ? (
+          <FadeIn delay={0.12}>
+            <Card className="mt-6 p-4 sm:p-6 md:p-8">
+              <div className="mb-4 flex items-center gap-2 text-hilton-deep">
+                <Shirt className="h-5 w-5 text-gold" />
+                <h3 className="font-display text-xl font-semibold">
+                  {wedding.kariyushi.title}
+                </h3>
+              </div>
+              <p className="font-display text-2xl font-semibold text-hilton-deep">
+                {wedding.kariyushi.shop}
+              </p>
+              <p className="mt-3 text-sm font-medium leading-relaxed text-muted">
+                {wedding.kariyushi.summary}
+              </p>
+              <p className="mt-3 rounded-2xl bg-sunny-soft px-4 py-3 text-sm font-extrabold leading-relaxed text-hilton-deep">
+                {wedding.kariyushi.flow}
+              </p>
+              <div className="mt-4 rounded-2xl bg-gold px-4 py-4 text-center text-white">
+                <p className="text-xs font-extrabold tracking-wide">紹介コード</p>
+                <p className="font-display text-4xl font-semibold tracking-widest">
+                  {wedding.kariyushi.code}
+                </p>
+                <p className="mt-1 text-sm font-bold">{wedding.kariyushi.discount}</p>
+              </div>
+              <div className="mt-4 space-y-3 text-sm">
+                <p className="flex items-start gap-2 font-medium leading-relaxed text-muted">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>{wedding.kariyushi.address}</span>
+                </p>
+                <p className="flex items-start gap-2 font-medium text-muted">
+                  <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>{wedding.kariyushi.hours}</span>
+                </p>
+                <a
+                  href={`tel:${wedding.kariyushi.phone.replace(/-/g, "")}`}
+                  className="inline-flex min-h-11 items-center gap-2 font-bold text-hilton"
+                >
+                  <Phone className="h-4 w-4 text-gold" />
+                  {wedding.kariyushi.phone}
+                </a>
+              </div>
+              <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+                <Button asChild variant="gold" className="w-full sm:w-auto">
+                  <a href={wedding.kariyushi.url} target="_blank" rel="noreferrer">
+                    サイトで予約
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="w-full sm:w-auto">
+                  <a href={wedding.kariyushi.mapsUrl} target="_blank" rel="noreferrer">
+                    地図で開く
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <p className="mt-3 break-all text-xs text-muted">
+                <a
+                  href={wedding.kariyushi.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-hilton underline-offset-2 hover:underline"
+                >
+                  {wedding.kariyushi.url}
+                </a>
+              </p>
+            </Card>
+          </FadeIn>
+        ) : null}
+
+        <FadeIn delay={0.14}>
           <Card className="mt-6 p-4 sm:p-6 md:p-8">
             <div className="mb-3 flex items-center gap-2 text-hilton-deep">
               <Heart className="h-5 w-5 text-gold" />

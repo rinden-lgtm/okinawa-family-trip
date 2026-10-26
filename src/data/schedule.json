@@ -31,6 +31,12 @@
           "icon": "car"
         },
         {
+          "time": "行き道",
+          "title": "かりゆし受け取り（希望者）",
+          "description": "空港からホテルへ向かう途中、Anne（豊見城市）で受け取り。予約は okinawa-anne.com、紹介コード AWE。帰りは各自で返却",
+          "icon": "sparkles"
+        },
+        {
           "time": "午後〜夕方",
           "title": "ホテルチェックイン",
           "description": "ヒルトン沖縄瀬底リゾート",
@@ -73,6 +79,12 @@
           "title": "レンタカー受取（後発組）",
           "description": "ワゴンタイプ1台＋5人乗り1台 ／ 詳細は下のレンタカー欄",
           "icon": "car"
+        },
+        {
+          "time": "行き道",
+          "title": "かりゆし受け取り（希望者）",
+          "description": "空港からホテルへ向かう途中、Anne（豊見城市）で受け取り。予約は okinawa-anne.com、紹介コード AWE。帰りは各自で返却",
+          "icon": "sparkles"
         },
         {
           "time": "15:00",
@@ -151,6 +163,12 @@
           "title": "ホテルチェックアウト",
           "description": "10:00までにフロントへ",
           "icon": "door-open"
+        },
+        {
+          "time": "帰り",
+          "title": "かりゆし返却（借りた方）",
+          "description": "空港へ向かう途中、各自でAnneへ返却。受取・返却は9:00〜18:00。那覇空港のチェックインは14:30まで",
+          "icon": "sparkles"
         },
         {
           "time": "午前〜午後",
