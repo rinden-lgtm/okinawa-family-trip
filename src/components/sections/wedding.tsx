@@ -154,44 +154,63 @@ export function WeddingSection() {
               <p className="font-display text-2xl font-semibold text-hilton-deep">
                 {wedding.kariyushi.shop}
               </p>
-              <p className="mt-3 text-sm font-medium leading-relaxed text-muted">
+              <p className="mt-3 text-[15px] font-medium leading-relaxed text-muted sm:text-sm">
                 {wedding.kariyushi.summary}
               </p>
-              <p className="mt-3 rounded-2xl bg-sunny-soft px-4 py-3 text-sm font-extrabold leading-relaxed text-hilton-deep">
-                {wedding.kariyushi.flow}
-              </p>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                <div className="rounded-2xl bg-hilton-soft px-3 py-3">
+                  <p className="text-[11px] font-extrabold tracking-wide text-hilton">
+                    行き
+                  </p>
+                  <p className="mt-1 text-[15px] font-extrabold leading-snug text-hilton-deep">
+                    {wedding.kariyushi.pickup}
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-gold-muted px-3 py-3">
+                  <p className="text-[11px] font-extrabold tracking-wide text-gold">
+                    帰り
+                  </p>
+                  <p className="mt-1 text-[15px] font-extrabold leading-snug text-hilton-deep">
+                    {wedding.kariyushi.return}
+                  </p>
+                </div>
+              </div>
               <div className="mt-4 rounded-2xl bg-gold px-4 py-4 text-center text-white">
-                <p className="text-xs font-extrabold tracking-wide">紹介コード</p>
-                <p className="font-display text-4xl font-semibold tracking-widest">
+                <p className="text-[11px] font-extrabold tracking-wide">紹介コード</p>
+                <p className="font-display text-[2.75rem] font-semibold leading-none tracking-[0.18em]">
                   {wedding.kariyushi.code}
                 </p>
-                <p className="mt-1 text-sm font-bold">{wedding.kariyushi.discount}</p>
+                <p className="mt-2 text-base font-extrabold">{wedding.kariyushi.discount}</p>
+                <p className="mt-1 text-[13px] font-bold leading-snug">
+                  {wedding.kariyushi.discountNote}
+                </p>
               </div>
-              <div className="mt-4 space-y-3 text-sm">
+              <div className="mt-4 space-y-3 text-[15px] sm:text-sm">
                 <p className="flex items-start gap-2 font-medium leading-relaxed text-muted">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <span>{wedding.kariyushi.address}</span>
+                  <span className="min-w-0 whitespace-pre-line break-words">{wedding.kariyushi.address}</span>
                 </p>
                 <p className="flex items-start gap-2 font-medium text-muted">
                   <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{wedding.kariyushi.hours}</span>
                 </p>
-                <a
-                  href={`tel:${wedding.kariyushi.phone.replace(/-/g, "")}`}
-                  className="inline-flex min-h-11 items-center gap-2 font-bold text-hilton"
-                >
-                  <Phone className="h-4 w-4 text-gold" />
-                  {wedding.kariyushi.phone}
-                </a>
               </div>
-              <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-                <Button asChild variant="gold" className="w-full sm:w-auto">
+              <div className="mt-5 grid gap-2 sm:grid-cols-3">
+                <Button asChild variant="gold" className="w-full">
                   <a href={wedding.kariyushi.url} target="_blank" rel="noreferrer">
                     サイトで予約
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="w-full sm:w-auto">
+                <Button asChild variant="outline" className="w-full">
+                  <a
+                    href={`tel:${wedding.kariyushi.phone.replace(/-/g, "")}`}
+                  >
+                    <Phone className="h-4 w-4" />
+                    {wedding.kariyushi.phone}
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="w-full">
                   <a href={wedding.kariyushi.mapsUrl} target="_blank" rel="noreferrer">
                     地図で開く
                     <ExternalLink className="h-4 w-4" />

@@ -21,12 +21,15 @@
     "shop": "Anne",
     "url": "https://okinawa-anne.com",
     "phone": "098-851-4326",
-    "address": "沖縄県豊見城市座安208-2 SOUTH ZA Ⅰ 1階",
+    "address": "沖縄県豊見城市座安208-2\nSOUTH ZA Ⅰ 1階",
     "hours": "受取・返却 9:00〜18:00",
     "code": "AWE",
-    "discount": "予約時に紹介コード AWE で10%オフ",
+    "discount": "10%オフ",
+    "discountNote": "予約するときに紹介コードを入力",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Anne+かりゆし+豊見城市座安208-2",
     "summary": "必要でしたら、サイトからそのまま予約してください。",
+    "pickup": "空港からホテルへ向かう途中で受け取る",
+    "return": "各自で返す",
     "flow": "行きに借りて、帰りは各自で返してください。"
   },
   "notes": [
