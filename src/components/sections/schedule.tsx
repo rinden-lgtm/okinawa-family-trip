@@ -207,29 +207,57 @@ export function ScheduleSection() {
                   <p className="text-xs font-extrabold tracking-wide text-gold">
                     {period.label}
                   </p>
-                  <p className="mt-1 whitespace-pre-line font-display text-lg font-semibold text-hilton-deep">
+                  <p className="mt-1 whitespace-pre-line font-display text-lg font-semibold leading-snug text-hilton-deep">
                     {period.summary}
                   </p>
+                  {period.vehicles.every((vehicle) => "count" in vehicle && vehicle.count) ? (
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      {period.vehicles.map((vehicle) => (
+                        <div
+                          key={`${period.id}-${vehicle.type}`}
+                          className={cn(
+                            "min-w-0 rounded-2xl px-2 py-3 text-center",
+                            vehicle.assignment
+                              ? "border-2 border-gold bg-gold-muted"
+                              : "bg-hilton-soft"
+                          )}
+                        >
+                          <p className="text-[11px] font-extrabold leading-tight text-hilton">
+                            {vehicle.type}
+                          </p>
+                          <p className="mt-1 font-display text-[1.75rem] font-semibold leading-none text-hilton-deep">
+                            {"count" in vehicle ? vehicle.count : ""}
+                          </p>
+                          {vehicle.assignment ? (
+                            <p className="mt-2 text-[13px] font-extrabold leading-snug text-hilton-deep">
+                              {vehicle.assignment}
+                            </p>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
                   <ul className="mt-4 space-y-3">
                     {period.vehicles.map((vehicle) => (
                       <li
-                        key={`${period.id}-${vehicle.type}`}
-                        className="rounded-2xl bg-hilton-soft/50 px-4 py-3"
+                        key={`${period.id}-${vehicle.no}`}
+                        className="min-w-0 rounded-2xl bg-hilton-soft/50 px-3 py-3 sm:px-4"
                       >
-                        <p className="text-sm font-extrabold text-hilton-deep">
+                        <p className="text-[15px] font-extrabold leading-snug text-hilton-deep sm:text-sm">
                           {vehicle.no ? (
                             <span className="mr-1.5 text-gold">{vehicle.no}</span>
                           ) : null}
                           {vehicle.type}
                         </p>
                         {vehicle.assignment ? (
-                          <p className="mt-1 whitespace-pre-line text-sm font-medium leading-relaxed text-muted">
+                          <p className="mt-1 whitespace-pre-line text-[15px] font-medium leading-relaxed text-muted sm:text-sm">
                             {vehicle.assignment}
                           </p>
                         ) : null}
                       </li>
                     ))}
                   </ul>
+                  )}
                 </div>
               ))}
             </div>

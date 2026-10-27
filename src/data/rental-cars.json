@@ -29,16 +29,18 @@
       "id": "from-nov1",
       "label": "1日〜3日",
       "dates": "11/1〜11/3",
-      "summary": "ワゴンタイプ（7人乗り）2台\n＋5人乗り1台",
+      "summary": "ワゴン2台を7人で使用",
       "vehicles": [
         {
           "no": "",
-          "type": "ワゴンタイプ（7人乗り）2台",
-          "assignment": "7人で2台使用"
+          "type": "7人乗りワゴン",
+          "count": "2台",
+          "assignment": "7人で使用"
         },
         {
           "no": "",
-          "type": "5人乗り1台",
+          "type": "5人乗り",
+          "count": "1台",
           "assignment": ""
         }
       ]
