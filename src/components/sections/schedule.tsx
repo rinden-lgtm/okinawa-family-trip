@@ -213,16 +213,20 @@ export function ScheduleSection() {
                   <ul className="mt-4 space-y-3">
                     {period.vehicles.map((vehicle) => (
                       <li
-                        key={`${period.id}-${vehicle.no}`}
+                        key={`${period.id}-${vehicle.type}`}
                         className="rounded-2xl bg-hilton-soft/50 px-4 py-3"
                       >
                         <p className="text-sm font-extrabold text-hilton-deep">
-                          <span className="mr-1.5 text-gold">{vehicle.no}</span>
+                          {vehicle.no ? (
+                            <span className="mr-1.5 text-gold">{vehicle.no}</span>
+                          ) : null}
                           {vehicle.type}
                         </p>
-                        <p className="mt-1 whitespace-pre-line text-sm font-medium leading-relaxed text-muted">
-                          {vehicle.assignment}
-                        </p>
+                        {vehicle.assignment ? (
+                          <p className="mt-1 whitespace-pre-line text-sm font-medium leading-relaxed text-muted">
+                            {vehicle.assignment}
+                          </p>
+                        ) : null}
                       </li>
                     ))}
                   </ul>
